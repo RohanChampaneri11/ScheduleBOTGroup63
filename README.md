@@ -2,15 +2,18 @@
 
 ![Python v3.9](https://img.shields.io/badge/python-v3.9-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/kgudipe/SE_PROJ/graphs/commit-activity) [![Contributors Activity](https://img.shields.io/github/commit-activity/m/kgudipe/SE_PROJ)](https://github.com/kgudipe/SE_PROJ/pulse)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10023646.svg)](https://doi.org/10.5281/zenodo.10023646)
 ![example workflow](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/style_checker.yml/badge.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/qchen59/ScheduleBot)
 ![GitHub issues](https://img.shields.io/github/issues/A1231/SEProjGrp6-ScheduleBot)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/kgudipe/SE_PROJ.svg)](https://github.com/kgudipe/SE_PROJ/issues?q=is%3Aissue+is%3Aclosed)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/A1231/SEProjGrp6-ScheduleBot)
 ![GitHub top language](https://img.shields.io/github/languages/top/A1231/SEProjGrp6-ScheduleBot)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/A1231/SEProjGrp6-ScheduleBot)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/A1231/SEProjGrp6-ScheduleBot)
 [![GitHub all releases](https://img.shields.io/github/downloads/SEProjGrp5/ScheduleBot/total)](https://github.com/SEProjGrp5/ScheduleBot/releases)
+![Contributors](https://img.shields.io/github/contributors/kgudipe/SE_PROJ)
 [![Platform](https://img.shields.io/badge/platform-discord-blue)](https://discord.com/)
 [![codecov](https://codecov.io/gh/SEProjGrp5/ScheduleBot/branch/main/graph/badge.svg?token=Z53J2ZN227)](https://codecov.io/gh/SEProjGrp5/ScheduleBot)
 <!--- [![Pylint](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml/badge.svg)](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml) --->
