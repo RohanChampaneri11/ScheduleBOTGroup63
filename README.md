@@ -171,6 +171,7 @@ To look for event summary:
 -   [v2.1](https://github.com/qchen59/ScheduleBot/releases/tag/v2.1.0): Finalized version 2, check what's new in V2
 -   [v3.0](https://github.com/SEProjGrp5/ScheduleBot/releases) Finalized version 3, check out what's new in V3
 -   [v4.0](https://github.com/A1231/SEProjGrp6-ScheduleBot/releases) Finalized version 4, check out what's new in V4!
+-   [v5.0](https://github.com/A1231/SEProjGrp6-ScheduleBot/releases) Finalized version 5, check out what's new in V4!
 
 
 :dizzy: Features in V2:
@@ -325,6 +326,63 @@ Once the issue got resolved:
 
 
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Delete2.png">
+
+
+
+:sparkles: What's new in V4:
+---
+Following are the new features that we have implemented for version 4 : 
+
+#### 1. Showing Weather for next 3 days:
+So far, the commands '!day today' and '!summary' provided information about the day's events and weather. However, we've now added a new command, '!day 3', which offers details about the events planned for the upcoming three days, along with the forecasted weather for each of those days.
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\EventCreated.png">
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Googlecalendar.png">
+
+
+
+
+
+#### 2. Adding a Google Maps link for travel:
+Schedule Bot's '!schedule' feature, already popular for event creation with details like date, time, source, destination, and mode of transport, has been enhanced. We've now added an extra feature: for each event you create, the bot will generate a Google Maps link based on the provided source and destination, and the chosen mode of transport. This complements our existing reminder service, where Google sends a pop-up notification five minutes before the event starts and an email one hour in advance, making sure you stay on top of your schedule.
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Reminder.png">
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\GCalReminder.png">
+
+
+
+
+
+#### 3. Displaying the weather for the day along with the day's events:
+Get each day's weather and temperature information along with the list of events you planned for the day.
+The Bot displays weather conditions in the event location (for each event) on a particular day when user types in the command to view summary of the events scheduled for that day.
+Type in the following command for the weather to be displayed:
+
+```
+!day today
+```
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Weather.png">
+
+#### 4. Fixed the bug caused by the delete event command:
+On executing the !deleteEvent command, the bot kept sending multiple "event does not exist" messages, even though the event does exist. That bug has been fixed in this version!
+
+Following was the issue:
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Delete1.png">
+
+
+Once the issue got resolved:
+
+
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Delete2.png">
+
 
 
 
