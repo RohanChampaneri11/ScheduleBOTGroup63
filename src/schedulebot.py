@@ -312,7 +312,13 @@ async def stop(ctx):
     )
     await ctx.bot.logout()
 
-
+@bot.command()
+async def recommend(ctx, *, mood: str):
+    """
+    Recommend events based on user's mood.
+    """
+    await recommend_event(ctx, mood)
+    
 @bot.command()
 async def freetime(ctx):
     """
