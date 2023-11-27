@@ -2,6 +2,7 @@ import discord  # type: ignore
 from discord.ext import commands  # type: ignore
 import os
 import json
+from functionality.recommend_event import recommend_event
 
 from discord.ext.commands.help import MinimalHelpCommand
 
@@ -16,6 +17,12 @@ from functionality.import_file import import_file
 from functionality.Google import connect_google
 from functionality.GoogleEvent import get_events
 from functionality.Delete_Event import delete_event
+from functionality.Edit_Event import edit_event
+from functionality.recommend_event import recommend_event
+from functionality.shared_functions import get_user_participation_history
+from functionality.shared_functions import get_event_history
+from functionality.shared_functions import get_user_event_history
+from functionality.shared_functions import format_event_history
 
 #client = discord.Client(intents=discord.Intents.default())
 bot = commands.Bot(command_prefix="!",intents=discord.Intents.default())  # Creates the bot with a command prefix of '!'
@@ -23,6 +30,16 @@ bot.remove_command("help")  # Removes the help command, so it can be created usi
 g_flag=0
 
 
+
+@bot.command()
+async def history(ctx):
+    """
+    Retrieves and displays the history of events attended by the user.
+    """
+    user_id = str(ctx.author.id)
+    events = get_user_event_history(user_id)  # This function should return a list of events
+    formatted_history = format_event_history(events)
+    await ctx.send(formatted_history)
 
 @bot.group(invoke_without_command=True)
 async def help(ctx):
