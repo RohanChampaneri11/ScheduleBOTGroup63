@@ -359,29 +359,12 @@ Schedule Bot's '!schedule' feature, already popular for event creation with deta
 
 
 
-#### 3. Displaying the weather for the day along with the day's events:
-Get each day's weather and temperature information along with the list of events you planned for the day.
-The Bot displays weather conditions in the event location (for each event) on a particular day when user types in the command to view summary of the events scheduled for that day.
-Type in the following command for the weather to be displayed:
+#### 3. Mood-Based Event Recommendations:
+Users have the option to enter their current mood, and in response, the bot provides event suggestions tailored to that mood, such as recommending relaxation activities for those feeling stressed. This allows users to schedule their events based on these personalized recommendations.
 
-```
-!day today
-```
+
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Weather.png">
 
-#### 4. Fixed the bug caused by the delete event command:
-On executing the !deleteEvent command, the bot kept sending multiple "event does not exist" messages, even though the event does exist. That bug has been fixed in this version!
-
-Following was the issue:
-
-
-<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Delete1.png">
-
-
-Once the issue got resolved:
-
-
-<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Delete2.png">
 
 
 
@@ -389,13 +372,6 @@ Once the issue got resolved:
 ## Here are some ideas for the future collaborators
 These are example features that could be added to ScheduleBot in the future.
 
-### Weather for the next 3 days
-
-Currently weather is shown for a particular day. It can be shown for the next few days too.
-
-
-### Adding a Google Maps link for travel
-When the user blocks out time for travel from one place to another, along with calculating the distance and time required to travel, the bot can send a Google Maps link to help the user navigate.
 
 ### Edit event
 You can edit the event you created:
