@@ -6,7 +6,73 @@ from datetime import datetime
 from cryptography.fernet import Fernet
 
 
+def get_event_history(user_id):
+    """
+    Fetches the event history for the given user ID.
+    """
+    events = read_event_file(user_id)
+    past_events = [event for event in events if datetime.strptime(event[3], "%Y-%m-%d %H:%M:%S") < datetime.now()]
+    return format_event_history(past_events)
 
+def format_event_history(events):
+    """
+    Formats the list of events into a human-readable string.
+    Parameters:
+        events (list): A list of event data.
+    Returns:
+        str: Formatted string of the user's past events.
+    """
+    if not events:
+        return "You have no past events."
+
+    history_str = "Your past events:\n"
+    for event in events:
+        # Assuming each event is a list with elements in the order:
+        # [event_id, event_name, start_date, end_date, priority, event_type, notes, location]
+        history_str += f"- {event[1]} (from {event[2]} to {event[3]})\n"
+    
+    return history_str
+
+def add_participant_to_event(user_id, event_id):
+    # Load events
+    events = read_event_file(user_id)
+    # Find the event and add the user to the participants
+    for event in events:
+        if event[0] == event_id:  # Assuming the first column is the event ID
+            event.append(user_id)
+            break
+    # Save the updated events
+    write_event_file(user_id, events)
+
+def get_user_event_history(user_id):
+    """
+    Retrieves the history of events attended by the user.
+    Parameters:
+        user_id (str): The Discord ID of the user.
+    Returns:
+        list: A list of past events.
+    """
+    events = read_event_file(user_id)
+    past_events = []
+    
+    # Assuming the structure of each event is as follows:
+    # [event_id, event_name, start_date, end_date, priority, event_type, notes, location]
+    # and the first row of the events file is a header
+    for event in events[1:]:
+        # Check if the event end date is in the past
+        end_date = datetime.strptime(event[3], "%Y-%m-%d %H:%M:%S")
+        if end_date < datetime.now():
+            past_events.append(event)
+    
+    return past_events
+
+def get_user_participation_history(user_id):
+    # Load events
+    events = read_event_file(user_id)
+    # Filter events where the user participated
+    participated_events = [event for event in events if user_id in event]
+    # Return a formatted list of events
+    return [f"{event[1]} on {event[2]}" for event in participated_events]  # Adjust indexing based on your CSV structure
 
 def create_type_directory():
     """
