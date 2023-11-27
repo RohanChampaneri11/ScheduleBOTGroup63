@@ -8,167 +8,104 @@ from functionality.distance import get_lat_log, get_key
 
 
 async def get_highlight(ctx, arg):
-    """
-    Function:
-        get_highlight
-    Description:
-        Shows the events planned for the day by the user.
-    Input:
-        - ctx - Discord context window
-        - arg - The input arguments which specify the date
-    Output:
-        - A message sent to the context with all the events that start and/or end today
-    """
-    # Get the date
     day = get_date(arg)
-
-    # Open and read user's calendar file
     create_event_tree(str(ctx.author.id))
     rows = read_event_file(str(ctx.author.id))
 
-    print(str(ctx.author.id))
-    print("\n\n\n\n\n")
-
-    
-    # Initialize variables
     channel = await ctx.author.create_dm()
-    event = {'name': '', 'startDate': '', 'startTime': '', 'endDate': '', 'endTime': '', 'type': '', 'desc': '','loc': ''}
     events = []
 
-    # If there are events in the file
-    if len(rows) > 1:
-        # For every row in calendar file
-        for row in rows[1:]:
-            # Get event details
-            event['name'] = row[1]
-            start = row[2].split()
-            event['startDate'] = start[0]
-            event['startTime'] = convert_to_12(start[1][:-3])  # Convert to 12 hour format
-            end = row[3].split()
-            event['endDate'] = end[0]
-            event['endTime'] = convert_to_12(end[1][:-3])  # Convert to 12 hour format
-            event['type'] = row[4]
-            event['desc'] = row[5]
-            event['location']=row[7]
-            dates = [event['startDate'], event['endDate']]
+    for row in rows[1:]:
+        event = {
+            'name': row[1],
+            'startDate': row[2].split()[0],
+            'startTime': convert_to_12(row[2].split()[1][:-3]),
+            'endDate': row[3].split()[0],
+            'endTime': convert_to_12(row[3].split()[1][:-3]),
+            'type': row[4],
+            'desc': row[5],
+            'location': row[7]
+        }
+        flag = check_start_or_end([event['startDate'], event['endDate']], day)
+        dates = [event['startDate'], event['endDate']]
+        event['flag'] = flag
 
-            flag = check_start_or_end(dates, day)
+        if flag:
+            events.append(event)
 
-            if flag == 1:
-                # If event starts and ends today
-                event['flag'] = 1
-                events.append(event)
-            elif flag == 2:
-                # If event starts today but ends on a later date
-                event['endDate'] = event['endDate'].split('-')
-                event['endDate'] = event['endDate'][1] + '/' + event['endDate'][2] + '/' + event['endDate'][0]
-                event['flag'] = 2
-                events.append(event)
-            elif flag == 3:
-                # If event is already in process and ends today
-                event['flag'] = 3
-                events.append(event)
+    for e in events:
+    # Check if event starts and ends today
+        if e['flag'] == 1:
+            await channel.send(f"You have {e['name']} scheduled, from {e['startTime']} to {e['endTime']}")
+        # Weather report only for events starting and ending today
+            if e['name'] != 'Travel' and e['location'] not in ['', 'online', 'Online']:
+                latlng = get_lat_log(e['location'], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
 
-            # reset event
-            event = {'name': '', 'startDate': '', 'startTime': '', 'endDate': '', 'endTime': '', 'type': '', 'desc': ''}
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
+                await channel.send(weather_message)
 
-        # If events are on schedule for today
-        if len(events) != 0:
-            for e in events:
-                if e['flag'] == 1:
-                    await channel.send(f"You have {e['name']} scheduled , from {e['startTime']} to {e['endTime']}")
+    # Check if event starts today but ends on a future date
+        elif e['flag'] == 2:
+        # Formatting end date for display
+            end_date_formatted = e['endDate'].split('-')
+            end_date_formatted = f"{end_date_formatted[1]}/{end_date_formatted[2]}/{end_date_formatted[0]}"
+            await channel.send(f"You have {e['name']} scheduled, from {e['startTime']} on {e['startDate']} to {e['endTime']} on {end_date_formatted}")
 
-                    if (e['name'] != 'Travel' and e['location']!='' and e['location']!='online' and e['location']!='Online' and e['startDate'] == str(date.today())):
-                        latlng = get_lat_log(e['location'],get_key())
-                        humidity, cel, fah, feels_like,desc = getWeatherData(latlng)
+        # Weather report only for events starting today
+            if e['name'] != 'Travel' and e['location'] not in ['', 'online', 'Online']:
+                latlng = get_lat_log(e['location'], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
 
-                        if(fah < 70):
-                            await channel.send(f"Don't forget your Jacket! 🥶 The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F" )
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
+                await channel.send(weather_message)
 
-                        elif(fah < 50):
-                            await channel.send(f"It is chilly! 🥶 The temperature is {fah:.1f}°F" )
-                        else:
-                            await channel.send(f"The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F")
+    # No weather report for events that end today but started earlier
+        elif e['flag'] == 3:
+            await channel.send(f"You have {e['name']} scheduled, till {e['endTime']}")
 
-                        await channel.send(f'{desc} today')
+    if not events:
+        await channel.send("No events scheduled for " + day + "!")
 
-                    else:
-                        print("What>?")
-                        print("<<<<<<<<<<<<<<<<<<<", e['location'])
+# Helper functions ...
 
-
-                elif e['flag'] == 2:
-                    await channel.send(
-                        "You have {e['name']} scheduled, from {e['startTime']} to {e['endTime']} on {e['endDate']}")
-                elif e['flag'] == 3:
-                    await channel.send(f"You have {e['name']} scheduled, till {e['endTime']}")
-        else:
-            if day is None:
-                await channel.send("Incorrect input format. \nHere is the format you should follow:\n!day "
-                                   "today\\tomorrow\\yesterday\n!day 3 (3 days from now)\n!day -3 (3 days ago)\n!day "
-                                   "4/20/22 (On Apr 20, 2022)")
-            else:
-                await channel.send("You don't have any event scheduled for " + day + "!")
+def create_weather_message(fah, feels_like, event_name, event_date):
+    """Function to create weather message based on temperature."""
+    if fah < 50:
+        return f"It is chilly! 🥶 The temperature is {fah:.1f}°F for {event_name} on {event_date}"
+    elif fah < 70:
+        return f"Don't forget your Jacket! 🥶 The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}"
     else:
-        await channel.send("Looks like your schedule is empty. You can add events using the '!schedule' command!")
+        return f"The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}"
 
 
-# Helper Functions
+
 
 def get_date(arg):
-    """
-    Function:
-        get_date
-    Description:
-        Get the date from the argument
-    Input:
-        - arg - User input argument
-    Output:
-        - The date extract from the argument
-    """
     if re.match("tomorrow", arg, re.I):
-        return str(datetime.date.today() + datetime.timedelta(days=1)).split()[0]
+        return str(date.today() + datetime.timedelta(days=1))
     if re.match("yesterday", arg, re.I):
-        return str(datetime.date.today() - datetime.timedelta(days=1)).split()[0]
-    if re.fullmatch("\d", arg) is not None:
-        return str(datetime.date.today() + datetime.timedelta(days=int(arg))).split()[0]
-    if re.fullmatch("-\d", arg) is not None:
-        arg = arg.replace("-", "")
-        return str(datetime.date.today() - datetime.timedelta(days=int(arg))).split()[0]
+        return str(date.today() - datetime.timedelta(days=1))
+    if re.fullmatch("\d+", arg):
+        return str(date.today() + datetime.timedelta(days=int(arg)))
+    if re.fullmatch("-\d+", arg):
+        return str(date.today() - datetime.timedelta(days=int(arg[1:])))
     if re.fullmatch("\d\d/\d\d/\d\d", arg):
-        return str(datetime.datetime.strptime(arg, "%m/%d/%y")).split()[0]
+        return str(datetime.datetime.strptime(arg, "%m/%d/%y").date())
     if re.match("today", arg, re.I):
-        return str(datetime.date.today()).split()[0]
-    else:
-        return None
+        return str(date.today())
+    return None
+
+
 
 
 
 def check_start_or_end(dates, today):
-    """
-    Function:
-        check_start_or_end
-    Description:
-        checks if given date starts or ends today
-    Input:
-        - dates - a list containing start and end date (strings) for an event
-        - today - today's date (string)
-    Output:
-        - 0 if no event starts or ends today
-        - 1 if event starts and ends today
-        - 2 if event starts today and ends on a later date
-        - 3 if event started on a previous date and ends today
-    """
-    if today == dates[0]:
-        if today == dates[1]:
-            return 1
-        else:
-            return 2
-    elif today == dates[1]:
-        return 3
-    else:
-        return 0
-
+    if today == dates[0] or today == dates[1]:
+        return True
+    return False
 
 def convert_to_12(time):
     """
