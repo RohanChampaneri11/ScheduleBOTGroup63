@@ -3,7 +3,7 @@
 ![Python v3.9](https://img.shields.io/badge/python-v3.9-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/kgudipe/SEProj-ScheduleBot/graphs/commit-activity) [![Contributors Activity](https://img.shields.io/github/commit-activity/m/kgudipe/SEProj-ScheduleBot)](https://github.com/kgudipe/SEProj-ScheduleBot/pulse)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10023646.svg)](https://doi.org/10.5281/zenodo.10023646)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211125.svg)](https://doi.org/10.5281/zenodo.10211125)
 ![example workflow](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/style_checker.yml/badge.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/qchen59/ScheduleBot)
 ![GitHub issues](https://img.shields.io/github/issues/kgudipe/SEProj-ScheduleBot)
@@ -28,7 +28,7 @@
   ::
   <a href="#thought_balloon-for-developers">For Developers</a>
   ::
-  <a href="#sparkles-whats-new-in-v5">What's new in V4 (Our addition to the project!)</a>
+  <a href="#sparkles-whats-new-in-v5">What's new in V5 (Our addition to the project!)</a>
 </p>
 
 ### Version 4 Submission Video
