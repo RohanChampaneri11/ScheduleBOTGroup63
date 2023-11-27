@@ -349,7 +349,7 @@ So far, the commands '!day today' and '!summary' provided information about the 
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Maps4.jpeg">
 
 
-<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Maps-5.jpeg">
+<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Maps-5.png">
 
 
 
