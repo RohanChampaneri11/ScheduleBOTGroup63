@@ -13,7 +13,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kgudipe/SEProj-ScheduleBot)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/kgudipe/SEProj-ScheduleBot)
 [![GitHub all releases](https://img.shields.io/github/downloads/SEProjGrp5/ScheduleBot/total)](https://github.com/SEProjGrp5/ScheduleBot/releases)
-![Contributors](https://img.shields.io/github/contributors/kgudipe/SE_PROJ)
+![Contributors](https://img.shields.io/github/contributors/kgudipe/SEProj-ScheduleBot)
 [![Platform](https://img.shields.io/badge/platform-discord-blue)](https://discord.com/)
 [![codecov](https://codecov.io/gh/SEProjGrp5/ScheduleBot/branch/main/graph/badge.svg?token=Z53J2ZN227)](https://codecov.io/gh/SEProjGrp5/ScheduleBot)
 <!--- [![Pylint](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml/badge.svg)](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml) --->
