@@ -210,13 +210,14 @@ async def add_event(ctx, client):
             )
             event_msg = await client.wait_for("message", check=check)  # Waits for user input
             src = event_msg.content
-            travel_time=get_distance(dest,src,mode)
+            travel_time, maps_link =get_distance(dest,src,mode)
             end=event_array[1]
             strt=(end-timedelta(seconds=travel_time))
             
             
             current = Event("Travel",strt, end, "1", "", "", "")
             await channel.send("Your Travel event was successfully created!")
+            await channel.send(f"Here is your Google Maps link for navigation: {maps_link}")
             create_event_tree(str(ctx.author.id))
             add_event_to_file(str(ctx.author.id), current)
             
