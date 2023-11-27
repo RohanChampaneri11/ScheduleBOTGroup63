@@ -333,8 +333,13 @@ Once the issue got resolved:
 ---
 Following are the new features that we have implemented for version 4 : 
 
-#### 1. Showing Weather for next 3 days:
-So far, the commands '!day today' and '!summary' provided information about the day's events and weather. However, we've now added a new command, '!day 3', which offers details about the events planned for the upcoming three days, along with the forecasted weather for each of those days.
+#### 1. Adding a Google Maps link for travel:
+Schedule Bot's '!schedule' feature, already popular for event creation with details like date, time, source, destination, and mode of transport, has been enhanced. We've now added an extra feature: for each event you create, the bot will generate a Google Maps link based on the provided source and destination, and the chosen mode of transport. This complements our existing reminder service, where Google sends a pop-up notification five minutes before the event starts and an email one hour in advance, making sure you stay on top of your schedule.
+
+
+```
+!schedule
+```
 
 
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Maps1.jpeg">
@@ -355,11 +360,26 @@ So far, the commands '!day today' and '!summary' provided information about the 
 
 
 
-#### 2. Adding a Google Maps link for travel:
-Schedule Bot's '!schedule' feature, already popular for event creation with details like date, time, source, destination, and mode of transport, has been enhanced. We've now added an extra feature: for each event you create, the bot will generate a Google Maps link based on the provided source and destination, and the chosen mode of transport. This complements our existing reminder service, where Google sends a pop-up notification five minutes before the event starts and an email one hour in advance, making sure you stay on top of your schedule.
+#### 2. Showing Weather for future days:
+Weather forecast for a specific day can be categorized into three cases:
+Case 1: The event both begins and concludes on the current day.
+Case 2: The event starts on the current day but extends to a future date.
+Case 3: The event has already commenced and will also conclude on the current day (in this scenario, a weather report cannot be generated).
+
+
+
+```
+!day today
+```
 
 
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\3Weather-1.jpeg">
+
+
+
+```
+!day tomorrow
+```
 
 
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\3Weather-2.jpeg">
@@ -370,6 +390,11 @@ Schedule Bot's '!schedule' feature, already popular for event creation with deta
 
 #### 3. Mood-Based Event Recommendations:
 Users have the option to enter their current mood, and in response, the bot provides event suggestions tailored to that mood, such as recommending relaxation activities for those feeling stressed. This allows users to schedule their events based on these personalized recommendations.
+
+
+```
+!recommend happy
+```
 
 
 <img width="481" alt="Screen Shot " src="docs\img\MoodRecomm.jpeg">
