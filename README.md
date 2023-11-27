@@ -28,7 +28,7 @@
   ::
   <a href="#thought_balloon-for-developers">For Developers</a>
   ::
-  <a href="#sparkles-whats-new-in-v4">What's new in V4 (Our addition to the project!)</a>
+  <a href="#sparkles-whats-new-in-v5">What's new in V4 (Our addition to the project!)</a>
 </p>
 
 ### Version 4 Submission Video
