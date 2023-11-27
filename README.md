@@ -351,15 +351,15 @@ Currently, the events can be deleted on discord. What can be added is, getting t
 
 
 ## Collaborators
-Apoorva Iyer 
+AkhilSai Chittipolu 
 
 
-Sai Challa Charitha
+Koushik Gudipelly
 
 
-Snigdha Kotharu
+Sai Ritwik Pokala
 
 
-Yashwanth Tanguturi
+Sai Santhosh Garlapati
 
 
