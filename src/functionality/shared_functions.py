@@ -6,6 +6,8 @@ from datetime import datetime
 from cryptography.fernet import Fernet
 
 
+
+
 def create_type_directory():
     """
     Function: create_type_directory
