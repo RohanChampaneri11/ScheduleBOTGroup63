@@ -429,6 +429,10 @@ You can edit the event you created:
 Currently, the events can be deleted on discord. What can be added is, getting them to be deleted from Google Calendar too.
 
 
+### Rubric
+Refer to Rubric.md file [here](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/Rubrics.md)
+
+
 ## Collaborators
 AkhilSai Chittipolu 
 
