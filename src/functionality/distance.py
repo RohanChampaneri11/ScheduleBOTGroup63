@@ -89,4 +89,9 @@ def get_distance( dest, src,mode):
         0].get("duration").get("value")
     print("Travel time:")
     print(travel_time)
-    return travel_time
+    
+    maps_link = f"https://www.google.com/maps/dir/?api=1&origin={orig}&destination={dest}&travelmode={mode.lower()}"
+    
+    return travel_time, maps_link
+
+
