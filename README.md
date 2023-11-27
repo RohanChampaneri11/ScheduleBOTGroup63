@@ -401,6 +401,17 @@ Users have the option to enter their current mood, and in response, the bot prov
 
 
 
+#### 4. Event History Feature: 
+The bot keeps a detailed record of your attended events. Simply by querying, you can easily review your activity history, such as gym sessions and study times, with precise start and end timestamps.
+
+
+```
+!history
+```
+
+
+<img width="481" alt="Screen Shot " src="docs\img\history.jpeg">
+
 
 
 ## Here are some ideas for the future collaborators
@@ -425,7 +436,7 @@ AkhilSai Chittipolu
 Koushik Gudipelly
 
 
-Sai Ritwik Pokala
+Sai Rithwik Pokala
 
 
 Sai Santhosh Garlapati
