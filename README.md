@@ -11,11 +11,11 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/kgudipe/SEProj-ScheduleBot)
 ![GitHub top language](https://img.shields.io/github/languages/top/kgudipe/SEProj-ScheduleBot)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kgudipe/SEProj-ScheduleBot)
+![Code Coverage](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/src/coverage.svg)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/kgudipe/SEProj-ScheduleBot)
 [![GitHub all releases](https://img.shields.io/github/downloads/SEProjGrp5/ScheduleBot/total)](https://github.com/SEProjGrp5/ScheduleBot/releases)
 ![Contributors](https://img.shields.io/github/contributors/kgudipe/SE_PROJ)
 [![Platform](https://img.shields.io/badge/platform-discord-blue)](https://discord.com/)
-![Code Coverage](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/src/coverage.svg)
 <!--- [![codecov](https://codecov.io/gh/SEProjGrp5/ScheduleBot/branch/main/graph/badge.svg?token=Z53J2ZN227)](https://codecov.io/gh/SEProjGrp5/ScheduleBot) --->
 
 
