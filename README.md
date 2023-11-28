@@ -68,7 +68,9 @@ To schedule a new event, just DM the bot:
 ```
 
 The bot will ask you the details of your new event.
+
 <img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\start2.jpeg">
+
 
 
 ### **I forgot my agenda for the day**
