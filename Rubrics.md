@@ -7,7 +7,7 @@ Project Name: Schedule Bot
 |Workload is spread over the whole team (one team member is often X times more productive than the others...|3|[Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main)|
 |But nevertheless, here is a track record that everyone is contributing a lot)|3|[Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main)|
 |Number of commits|3|667 commits<br>in GH|
-|Number of commits: by different people|3|<p>kgudipe - 13</p><p>achitti2812 - 4</p><p>saisanthoshgarlapati – 4</p><p>Rithwik - 4</p><p></p><p>Command: git shortlog -s -n</p>|
+|Number of commits: by different people|3|<p>kgudipe - 17</p><p>achitti2812 - 13</p><p>saisanthoshgarlapati – 16</p><p>Rithwik - 14</p><p></p><p>Command: git shortlog -s -n</p>|
 |Issues reports: there are many|3|<p>0</p><p>[Open Issues](https://github.com/kgudipe/SEProj-ScheduleBot/issues?q=is%3Aopen+is%3Aissue)</p>|
 |Issues are being closed|3|<p>4</p><p></p><p>[Closed Issues](https://github.com/kgudipe/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p>|
 |DOI badge: exists|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
