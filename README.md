@@ -126,7 +126,7 @@ To look for event summary:
 ```
 !summary
 ```
-<img width="481" alt="Screen Shot 2021-11-03 at 10 15 04 PM" src="docs\img\Freetime.png">
+<img width="481" alt="Summary" src="docs\img\Summary.png">
 
 
 
