@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>src.functionality.highlights API documentation</title>
+<title>highlights API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#2f3337}.flex{display:flex !important}body{color:#ffffff;background-color:#181A1B;line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#ffffff;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#c8ccd0}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#0c0d0e;color:#ffffff;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;color:#ffffff;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#0c0d0e;color:#ffffff;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#0c0d0e;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#2f3337}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
 <style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>src.functionality.highlights</code></h1>
+<h1 class="title">Module <code>highlights</code></h1>
 </header>
 <section id="section-intro">
 <details class="source">
@@ -28,146 +28,109 @@
 </summary>
 <pre><code class="python">import re
 import datetime
-from functionality.shared_functions import read_event_file, create_event_tree
+from datetime import date
+
 
 
 async def get_highlight(ctx, arg):
-    &#34;&#34;&#34;
-    Function:
-        get_highlight
-    Description:
-        Shows the events planned for the day by the user.
-    Input:
-        - ctx - Discord context window
-        - arg - The input arguments which specify the date
-    Output:
-        - A message sent to the context with all the events that start and/or end today
-    &#34;&#34;&#34;
-    # Get the date
     day = get_date(arg)
-
-    # Open and read user&#39;s calendar file
     create_event_tree(str(ctx.author.id))
     rows = read_event_file(str(ctx.author.id))
 
-    # Initialize variables
     channel = await ctx.author.create_dm()
-    event = {&#39;name&#39;: &#39;&#39;, &#39;startDate&#39;: &#39;&#39;, &#39;startTime&#39;: &#39;&#39;, &#39;endDate&#39;: &#39;&#39;, &#39;endTime&#39;: &#39;&#39;, &#39;type&#39;: &#39;&#39;, &#39;desc&#39;: &#39;&#39;}
     events = []
 
-    # If there are events in the file
-    if len(rows) &gt; 1:
-        # For every row in calendar file
-        for row in rows[1:]:
-            # Get event details
-            event[&#39;name&#39;] = row[1]
-            start = row[2].split()
-            event[&#39;startDate&#39;] = start[0]
-            event[&#39;startTime&#39;] = convert_to_12(start[1][:-3])  # Convert to 12 hour format
-            end = row[3].split()
-            event[&#39;endDate&#39;] = end[0]
-            event[&#39;endTime&#39;] = convert_to_12(end[1][:-3])  # Convert to 12 hour format
-            event[&#39;type&#39;] = row[4]
-            event[&#39;desc&#39;] = row[5]
-            dates = [event[&#39;startDate&#39;], event[&#39;endDate&#39;]]
+    for row in rows[1:]:
+        event = {
+            &#39;name&#39;: row[1],
+            &#39;startDate&#39;: row[2].split()[0],
+            &#39;startTime&#39;: convert_to_12(row[2].split()[1][:-3]),
+            &#39;endDate&#39;: row[3].split()[0],
+            &#39;endTime&#39;: convert_to_12(row[3].split()[1][:-3]),
+            &#39;type&#39;: row[4],
+            &#39;desc&#39;: row[5],
+            &#39;location&#39;: row[7]
+        }
+        flag = check_start_or_end([event[&#39;startDate&#39;], event[&#39;endDate&#39;]], day)
+        dates = [event[&#39;startDate&#39;], event[&#39;endDate&#39;]]
+        event[&#39;flag&#39;] = flag
 
-            flag = check_start_or_end(dates, day)
+        if flag:
+            events.append(event)
 
-            if flag == 1:
-                # If event starts and ends today
-                event[&#39;flag&#39;] = 1
-                events.append(event)
-            elif flag == 2:
-                # If event starts today but ends on a later date
-                event[&#39;endDate&#39;] = event[&#39;endDate&#39;].split(&#39;-&#39;)
-                event[&#39;endDate&#39;] = event[&#39;endDate&#39;][1] + &#39;/&#39; + event[&#39;endDate&#39;][2] + &#39;/&#39; + event[&#39;endDate&#39;][0]
-                event[&#39;flag&#39;] = 2
-                events.append(event)
-            elif flag == 3:
-                # If event is already in process and ends today
-                event[&#39;flag&#39;] = 3
-                events.append(event)
+    for e in events:
+    # Check if event starts and ends today
+        if e[&#39;flag&#39;] == 1:
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]}&#34;)
+        # Weather report only for events starting and ending today
+            if e[&#39;name&#39;] != &#39;Travel&#39; and e[&#39;location&#39;] not in [&#39;&#39;, &#39;online&#39;, &#39;Online&#39;]:
+                latlng = get_lat_log(e[&#39;location&#39;], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e[&#39;startDate&#39;])
 
-            # reset event
-            event = {&#39;name&#39;: &#39;&#39;, &#39;startDate&#39;: &#39;&#39;, &#39;startTime&#39;: &#39;&#39;, &#39;endDate&#39;: &#39;&#39;, &#39;endTime&#39;: &#39;&#39;, &#39;type&#39;: &#39;&#39;, &#39;desc&#39;: &#39;&#39;}
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e[&#39;name&#39;], e[&#39;startDate&#39;])
+                await channel.send(weather_message)
 
-        # If events are on schedule for today
-        if len(events) != 0:
-            for e in events:
-                if e[&#39;flag&#39;] == 1:
-                    await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled , from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]}&#34;)
-                elif e[&#39;flag&#39;] == 2:
-                    await channel.send(
-                        &#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]} on {e[&#39;endDate&#39;]}&#34;)
-                elif e[&#39;flag&#39;] == 3:
-                    await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, till {e[&#39;endTime&#39;]}&#34;)
-        else:
-            if day is None:
-                await channel.send(&#34;Incorrect input format. \nHere is the format you should follow:\n!day &#34;
-                                   &#34;today\\tomorrow\\yesterday\n!day 3 (3 days from now)\n!day -3 (3 days ago)\n!day &#34;
-                                   &#34;4/20/22 (On Apr 20, 2022)&#34;)
-            else:
-                await channel.send(&#34;You don&#39;t have any event scheduled for &#34; + day + &#34;!&#34;)
+    # Check if event starts today but ends on a future date
+        elif e[&#39;flag&#39;] == 2:
+        # Formatting end date for display
+            end_date_formatted = e[&#39;endDate&#39;].split(&#39;-&#39;)
+            end_date_formatted = f&#34;{end_date_formatted[1]}/{end_date_formatted[2]}/{end_date_formatted[0]}&#34;
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} on {e[&#39;startDate&#39;]} to {e[&#39;endTime&#39;]} on {end_date_formatted}&#34;)
+
+        # Weather report only for events starting today
+            if e[&#39;name&#39;] != &#39;Travel&#39; and e[&#39;location&#39;] not in [&#39;&#39;, &#39;online&#39;, &#39;Online&#39;]:
+                latlng = get_lat_log(e[&#39;location&#39;], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e[&#39;startDate&#39;])
+
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e[&#39;name&#39;], e[&#39;startDate&#39;])
+                await channel.send(weather_message)
+
+    # No weather report for events that end today but started earlier
+        elif e[&#39;flag&#39;] == 3:
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, till {e[&#39;endTime&#39;]}&#34;)
+
+    if not events:
+        await channel.send(&#34;No events scheduled for &#34; + day + &#34;!&#34;)
+
+# Helper functions ...
+
+def create_weather_message(fah, feels_like, event_name, event_date):
+    &#34;&#34;&#34;Function to create weather message based on temperature.&#34;&#34;&#34;
+    if fah &lt; 50:
+        return f&#34;It is chilly! 🥶 The temperature is {fah:.1f}°F for {event_name} on {event_date}&#34;
+    elif fah &lt; 70:
+        return f&#34;Don&#39;t forget your Jacket! 🥶 The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}&#34;
     else:
-        await channel.send(&#34;Looks like your schedule is empty. You can add events using the &#39;!schedule&#39; command!&#34;)
+        return f&#34;The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}&#34;
 
 
-# Helper Functions
+
 
 def get_date(arg):
-    &#34;&#34;&#34;
-    Function:
-        get_date
-    Description:
-        Get the date from the argument
-    Input:
-        - arg - User input argument
-    Output:
-        - The date extract from the argument
-    &#34;&#34;&#34;
     if re.match(&#34;tomorrow&#34;, arg, re.I):
-        return str(datetime.date.today() + datetime.timedelta(days=1)).split()[0]
+        return str(date.today() + datetime.timedelta(days=1))
     if re.match(&#34;yesterday&#34;, arg, re.I):
-        return str(datetime.date.today() - datetime.timedelta(days=1)).split()[0]
-    if re.fullmatch(&#34;\d&#34;, arg) is not None:
-        return str(datetime.date.today() + datetime.timedelta(days=int(arg))).split()[0]
-    if re.fullmatch(&#34;-\d&#34;, arg) is not None:
-        arg = arg.replace(&#34;-&#34;, &#34;&#34;)
-        return str(datetime.date.today() - datetime.timedelta(days=int(arg))).split()[0]
+        return str(date.today() - datetime.timedelta(days=1))
+    if re.fullmatch(&#34;\d+&#34;, arg):
+        return str(date.today() + datetime.timedelta(days=int(arg)))
+    if re.fullmatch(&#34;-\d+&#34;, arg):
+        return str(date.today() - datetime.timedelta(days=int(arg[1:])))
     if re.fullmatch(&#34;\d\d/\d\d/\d\d&#34;, arg):
-        return str(datetime.datetime.strptime(arg, &#34;%m/%d/%y&#34;)).split()[0]
+        return str(datetime.datetime.strptime(arg, &#34;%m/%d/%y&#34;).date())
     if re.match(&#34;today&#34;, arg, re.I):
-        return str(datetime.date.today()).split()[0]
-    else:
-        return None
+        return str(date.today())
+    return None
+
+
 
 
 
 def check_start_or_end(dates, today):
-    &#34;&#34;&#34;
-    Function:
-        check_start_or_end
-    Description:
-        checks if given date starts or ends today
-    Input:
-        - dates - a list containing start and end date (strings) for an event
-        - today - today&#39;s date (string)
-    Output:
-        - 0 if no event starts or ends today
-        - 1 if event starts and ends today
-        - 2 if event starts today and ends on a later date
-        - 3 if event started on a previous date and ends today
-    &#34;&#34;&#34;
-    if today == dates[0]:
-        if today == dates[1]:
-            return 1
-        else:
-            return 2
-    elif today == dates[1]:
-        return 3
-    else:
-        return 0
-
+    if today == dates[0] or today == dates[1]:
+        return True
+    return False
 
 def convert_to_12(time):
     &#34;&#34;&#34;
@@ -202,57 +165,22 @@ def convert_to_12(time):
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="src.functionality.highlights.check_start_or_end"><code class="name flex">
+<dt id="highlights.check_start_or_end"><code class="name flex">
 <span>def <span class="ident">check_start_or_end</span></span>(<span>dates, today)</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="function">Function</h2>
-<p>check_start_or_end</p>
-<h2 id="description">Description</h2>
-<p>checks if given date starts or ends today</p>
-<h2 id="input">Input</h2>
-<ul>
-<li>dates - a list containing start and end date (strings) for an event</li>
-<li>today - today's date (string)</li>
-</ul>
-<h2 id="output">Output</h2>
-<ul>
-<li>0 if no event starts or ends today</li>
-<li>1 if event starts and ends today</li>
-<li>2 if event starts today and ends on a later date</li>
-<li>3 if event started on a previous date and ends today</li>
-</ul></div>
+<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def check_start_or_end(dates, today):
-    &#34;&#34;&#34;
-    Function:
-        check_start_or_end
-    Description:
-        checks if given date starts or ends today
-    Input:
-        - dates - a list containing start and end date (strings) for an event
-        - today - today&#39;s date (string)
-    Output:
-        - 0 if no event starts or ends today
-        - 1 if event starts and ends today
-        - 2 if event starts today and ends on a later date
-        - 3 if event started on a previous date and ends today
-    &#34;&#34;&#34;
-    if today == dates[0]:
-        if today == dates[1]:
-            return 1
-        else:
-            return 2
-    elif today == dates[1]:
-        return 3
-    else:
-        return 0</code></pre>
+    if today == dates[0] or today == dates[1]:
+        return True
+    return False</code></pre>
 </details>
 </dd>
-<dt id="src.functionality.highlights.convert_to_12"><code class="name flex">
+<dt id="highlights.convert_to_12"><code class="name flex">
 <span>def <span class="ident">convert_to_12</span></span>(<span>time)</span>
 </code></dt>
 <dd>
@@ -296,154 +224,120 @@ def convert_to_12(time):
     return new_time</code></pre>
 </details>
 </dd>
-<dt id="src.functionality.highlights.get_date"><code class="name flex">
+<dt id="highlights.create_weather_message"><code class="name flex">
+<span>def <span class="ident">create_weather_message</span></span>(<span>fah, feels_like, event_name, event_date)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to create weather message based on temperature.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_weather_message(fah, feels_like, event_name, event_date):
+    &#34;&#34;&#34;Function to create weather message based on temperature.&#34;&#34;&#34;
+    if fah &lt; 50:
+        return f&#34;It is chilly! 🥶 The temperature is {fah:.1f}°F for {event_name} on {event_date}&#34;
+    elif fah &lt; 70:
+        return f&#34;Don&#39;t forget your Jacket! 🥶 The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}&#34;
+    else:
+        return f&#34;The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}&#34;</code></pre>
+</details>
+</dd>
+<dt id="highlights.get_date"><code class="name flex">
 <span>def <span class="ident">get_date</span></span>(<span>arg)</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="function">Function</h2>
-<p>get_date</p>
-<h2 id="description">Description</h2>
-<p>Get the date from the argument</p>
-<h2 id="input">Input</h2>
-<ul>
-<li>arg - User input argument</li>
-</ul>
-<h2 id="output">Output</h2>
-<ul>
-<li>The date extract from the argument</li>
-</ul></div>
+<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def get_date(arg):
-    &#34;&#34;&#34;
-    Function:
-        get_date
-    Description:
-        Get the date from the argument
-    Input:
-        - arg - User input argument
-    Output:
-        - The date extract from the argument
-    &#34;&#34;&#34;
     if re.match(&#34;tomorrow&#34;, arg, re.I):
-        return str(datetime.date.today() + datetime.timedelta(days=1)).split()[0]
+        return str(date.today() + datetime.timedelta(days=1))
     if re.match(&#34;yesterday&#34;, arg, re.I):
-        return str(datetime.date.today() - datetime.timedelta(days=1)).split()[0]
-    if re.fullmatch(&#34;\d&#34;, arg) is not None:
-        return str(datetime.date.today() + datetime.timedelta(days=int(arg))).split()[0]
-    if re.fullmatch(&#34;-\d&#34;, arg) is not None:
-        arg = arg.replace(&#34;-&#34;, &#34;&#34;)
-        return str(datetime.date.today() - datetime.timedelta(days=int(arg))).split()[0]
+        return str(date.today() - datetime.timedelta(days=1))
+    if re.fullmatch(&#34;\d+&#34;, arg):
+        return str(date.today() + datetime.timedelta(days=int(arg)))
+    if re.fullmatch(&#34;-\d+&#34;, arg):
+        return str(date.today() - datetime.timedelta(days=int(arg[1:])))
     if re.fullmatch(&#34;\d\d/\d\d/\d\d&#34;, arg):
-        return str(datetime.datetime.strptime(arg, &#34;%m/%d/%y&#34;)).split()[0]
+        return str(datetime.datetime.strptime(arg, &#34;%m/%d/%y&#34;).date())
     if re.match(&#34;today&#34;, arg, re.I):
-        return str(datetime.date.today()).split()[0]
-    else:
-        return None</code></pre>
+        return str(date.today())
+    return None</code></pre>
 </details>
 </dd>
-<dt id="src.functionality.highlights.get_highlight"><code class="name flex">
+<dt id="highlights.get_highlight"><code class="name flex">
 <span>async def <span class="ident">get_highlight</span></span>(<span>ctx, arg)</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="function">Function</h2>
-<p>get_highlight</p>
-<h2 id="description">Description</h2>
-<p>Shows the events planned for the day by the user.</p>
-<h2 id="input">Input</h2>
-<ul>
-<li>ctx - Discord context window</li>
-<li>arg - The input arguments which specify the date</li>
-</ul>
-<h2 id="output">Output</h2>
-<ul>
-<li>A message sent to the context with all the events that start and/or end today</li>
-</ul></div>
+<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">async def get_highlight(ctx, arg):
-    &#34;&#34;&#34;
-    Function:
-        get_highlight
-    Description:
-        Shows the events planned for the day by the user.
-    Input:
-        - ctx - Discord context window
-        - arg - The input arguments which specify the date
-    Output:
-        - A message sent to the context with all the events that start and/or end today
-    &#34;&#34;&#34;
-    # Get the date
     day = get_date(arg)
-
-    # Open and read user&#39;s calendar file
     create_event_tree(str(ctx.author.id))
     rows = read_event_file(str(ctx.author.id))
 
-    # Initialize variables
     channel = await ctx.author.create_dm()
-    event = {&#39;name&#39;: &#39;&#39;, &#39;startDate&#39;: &#39;&#39;, &#39;startTime&#39;: &#39;&#39;, &#39;endDate&#39;: &#39;&#39;, &#39;endTime&#39;: &#39;&#39;, &#39;type&#39;: &#39;&#39;, &#39;desc&#39;: &#39;&#39;}
     events = []
 
-    # If there are events in the file
-    if len(rows) &gt; 1:
-        # For every row in calendar file
-        for row in rows[1:]:
-            # Get event details
-            event[&#39;name&#39;] = row[1]
-            start = row[2].split()
-            event[&#39;startDate&#39;] = start[0]
-            event[&#39;startTime&#39;] = convert_to_12(start[1][:-3])  # Convert to 12 hour format
-            end = row[3].split()
-            event[&#39;endDate&#39;] = end[0]
-            event[&#39;endTime&#39;] = convert_to_12(end[1][:-3])  # Convert to 12 hour format
-            event[&#39;type&#39;] = row[4]
-            event[&#39;desc&#39;] = row[5]
-            dates = [event[&#39;startDate&#39;], event[&#39;endDate&#39;]]
+    for row in rows[1:]:
+        event = {
+            &#39;name&#39;: row[1],
+            &#39;startDate&#39;: row[2].split()[0],
+            &#39;startTime&#39;: convert_to_12(row[2].split()[1][:-3]),
+            &#39;endDate&#39;: row[3].split()[0],
+            &#39;endTime&#39;: convert_to_12(row[3].split()[1][:-3]),
+            &#39;type&#39;: row[4],
+            &#39;desc&#39;: row[5],
+            &#39;location&#39;: row[7]
+        }
+        flag = check_start_or_end([event[&#39;startDate&#39;], event[&#39;endDate&#39;]], day)
+        dates = [event[&#39;startDate&#39;], event[&#39;endDate&#39;]]
+        event[&#39;flag&#39;] = flag
 
-            flag = check_start_or_end(dates, day)
+        if flag:
+            events.append(event)
 
-            if flag == 1:
-                # If event starts and ends today
-                event[&#39;flag&#39;] = 1
-                events.append(event)
-            elif flag == 2:
-                # If event starts today but ends on a later date
-                event[&#39;endDate&#39;] = event[&#39;endDate&#39;].split(&#39;-&#39;)
-                event[&#39;endDate&#39;] = event[&#39;endDate&#39;][1] + &#39;/&#39; + event[&#39;endDate&#39;][2] + &#39;/&#39; + event[&#39;endDate&#39;][0]
-                event[&#39;flag&#39;] = 2
-                events.append(event)
-            elif flag == 3:
-                # If event is already in process and ends today
-                event[&#39;flag&#39;] = 3
-                events.append(event)
+    for e in events:
+    # Check if event starts and ends today
+        if e[&#39;flag&#39;] == 1:
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]}&#34;)
+        # Weather report only for events starting and ending today
+            if e[&#39;name&#39;] != &#39;Travel&#39; and e[&#39;location&#39;] not in [&#39;&#39;, &#39;online&#39;, &#39;Online&#39;]:
+                latlng = get_lat_log(e[&#39;location&#39;], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e[&#39;startDate&#39;])
 
-            # reset event
-            event = {&#39;name&#39;: &#39;&#39;, &#39;startDate&#39;: &#39;&#39;, &#39;startTime&#39;: &#39;&#39;, &#39;endDate&#39;: &#39;&#39;, &#39;endTime&#39;: &#39;&#39;, &#39;type&#39;: &#39;&#39;, &#39;desc&#39;: &#39;&#39;}
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e[&#39;name&#39;], e[&#39;startDate&#39;])
+                await channel.send(weather_message)
 
-        # If events are on schedule for today
-        if len(events) != 0:
-            for e in events:
-                if e[&#39;flag&#39;] == 1:
-                    await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled , from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]}&#34;)
-                elif e[&#39;flag&#39;] == 2:
-                    await channel.send(
-                        &#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} to {e[&#39;endTime&#39;]} on {e[&#39;endDate&#39;]}&#34;)
-                elif e[&#39;flag&#39;] == 3:
-                    await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, till {e[&#39;endTime&#39;]}&#34;)
-        else:
-            if day is None:
-                await channel.send(&#34;Incorrect input format. \nHere is the format you should follow:\n!day &#34;
-                                   &#34;today\\tomorrow\\yesterday\n!day 3 (3 days from now)\n!day -3 (3 days ago)\n!day &#34;
-                                   &#34;4/20/22 (On Apr 20, 2022)&#34;)
-            else:
-                await channel.send(&#34;You don&#39;t have any event scheduled for &#34; + day + &#34;!&#34;)
-    else:
-        await channel.send(&#34;Looks like your schedule is empty. You can add events using the &#39;!schedule&#39; command!&#34;)</code></pre>
+    # Check if event starts today but ends on a future date
+        elif e[&#39;flag&#39;] == 2:
+        # Formatting end date for display
+            end_date_formatted = e[&#39;endDate&#39;].split(&#39;-&#39;)
+            end_date_formatted = f&#34;{end_date_formatted[1]}/{end_date_formatted[2]}/{end_date_formatted[0]}&#34;
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, from {e[&#39;startTime&#39;]} on {e[&#39;startDate&#39;]} to {e[&#39;endTime&#39;]} on {end_date_formatted}&#34;)
+
+        # Weather report only for events starting today
+            if e[&#39;name&#39;] != &#39;Travel&#39; and e[&#39;location&#39;] not in [&#39;&#39;, &#39;online&#39;, &#39;Online&#39;]:
+                latlng = get_lat_log(e[&#39;location&#39;], get_key())
+                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e[&#39;startDate&#39;])
+
+            # Create and send the weather message
+                weather_message = create_weather_message(fah, feels_like, e[&#39;name&#39;], e[&#39;startDate&#39;])
+                await channel.send(weather_message)
+
+    # No weather report for events that end today but started earlier
+        elif e[&#39;flag&#39;] == 3:
+            await channel.send(f&#34;You have {e[&#39;name&#39;]} scheduled, till {e[&#39;endTime&#39;]}&#34;)
+
+    if not events:
+        await channel.send(&#34;No events scheduled for &#34; + day + &#34;!&#34;)</code></pre>
 </details>
 </dd>
 </dl>
@@ -452,35 +346,18 @@ def convert_to_12(time):
 </section>
 </article>
 <nav id="sidebar">
-<!--Adapted from Tim Menzies: https://github.com/timm/bnbad2/blob/main/docs/logo.mako -->
-<center>
-<a href="http://github.com/lyonva/ScheduleBot"><img src="https://raw.githubusercontent.com/lyonva/ScheduleBot/main/docs/img/banner.png" width=2000></a>
-<p>CSC 510 Software Engineering, Fall 21, Group 14<br>
-</p>
-<p>
-<a href="https://zenodo.org/badge/latestdoi/403393616"><img src="https://zenodo.org/badge/403393616.svg" alt="DOI"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-<br><img src="https://img.shields.io/badge/python-v3.9-blue">
-<br><img src="https://github.com/lyonva/ScheduleBot/actions/workflows/python-app.yml/badge.svg">
-<img src="https://raw.githubusercontent.com/lyonva/ScheduleBot/main/docs/img/coverage.svg">
-</p><hr>
-</center>
 <h1>Index</h1>
 <div class="toc">
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3>Super-module</h3>
-<ul>
-<li><code><a title="src.functionality" href="index.html">src.functionality</a></code></li>
-</ul>
-</li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="src.functionality.highlights.check_start_or_end" href="#src.functionality.highlights.check_start_or_end">check_start_or_end</a></code></li>
-<li><code><a title="src.functionality.highlights.convert_to_12" href="#src.functionality.highlights.convert_to_12">convert_to_12</a></code></li>
-<li><code><a title="src.functionality.highlights.get_date" href="#src.functionality.highlights.get_date">get_date</a></code></li>
-<li><code><a title="src.functionality.highlights.get_highlight" href="#src.functionality.highlights.get_highlight">get_highlight</a></code></li>
+<li><code><a title="highlights.check_start_or_end" href="#highlights.check_start_or_end">check_start_or_end</a></code></li>
+<li><code><a title="highlights.convert_to_12" href="#highlights.convert_to_12">convert_to_12</a></code></li>
+<li><code><a title="highlights.create_weather_message" href="#highlights.create_weather_message">create_weather_message</a></code></li>
+<li><code><a title="highlights.get_date" href="#highlights.get_date">get_date</a></code></li>
+<li><code><a title="highlights.get_highlight" href="#highlights.get_highlight">get_highlight</a></code></li>
 </ul>
 </li>
 </ul>
