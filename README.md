@@ -31,7 +31,7 @@
   <a href="#sparkles-whats-new-in-v5">What's new in V5 (Our addition to the project!)</a>
 </p>
 
-### Version 4 Submission Video
+### Version 5 Submission Video
 Click on the image below to check out the video!
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/3UVs0_7Tcxk/0.jpg)](https://youtu.be/n5qEw61pARw")
