@@ -19,12 +19,25 @@ Project Name: Schedule Bot
 |Test cases are routinely executed|3| <br>[File1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/test)|
 |Issues are discussed before they are closed|3|<p>[Discussion1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues/2)</p><p>[Discussion2]()</p><p>[Discussion3]()</p><p>[Discussion4]()</p>|
 |Chat channel: exists|3|[Chat Channel](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/Discord)|
-|Test cases: a large proportion of the issues related to handling failing cases.|3|[Test Cases](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/test)|
-|Evidence that the whole team is using the same tools: everyone can get to all tools and files|3|[CheckCommits](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/requirements.txt)|
-|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|3|<p> </p><p>[Requirements.txt](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/requirements.txt) is installed by everyone.</p>|
+|Test cases: a large proportion of the issues related to handling failing cases.|3|[Test Cases](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/test)|
+|Evidence that the whole team is using the same tools: everyone can get to all tools and files|3|[CheckCommits](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/requirements.txt)|
+|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|3|<p> </p><p>[Requirements.txt](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/requirements.txt) is installed by everyone.</p>|
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)|3|All the members are using the same tools|
-|Evidence that the members of the team are working across multiple places in the code base|3|<p>[CheckCommits](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main)</p><p></p>|
-|Short release cycles|3|[Graphs](https://github.com/kgudipe/SEProj-ScheduleBot/graphs/contributors)|
+|Evidence that the members of the team are working across multiple places in the code base|3|<p>[CheckCommits](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/main/)</p><p></p>|
+|Short release cycles|3|[Graphs](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/graphs/contributors)|
+|The file .gitignore lists what files should not be saved to the repo. See [examples]i(https://github.com/github/gitignore)|3| [Gitignore](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/.gitignore)
+|The file INSTALL.md lists how to install the code|3|[INSTALL.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)
+|The file LICENSE.md lists rules of usage for this repo|3|[LICENSE.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/LICENSE)
+|The file CODE-OF-CONDUCT.md lists rules of behavior for this repo; e.g. see example|3|[CODE-OF-CONDUCT.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/CODE_OF_CONDUCT.md)
+|The file CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up; e.g. see example|3|[CONTRIBUTING.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/CONTRIBUTING.md)
+|The file README.md contains all the following|3|[README.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)
+|Video|3|<p></p><p>[Youtube Link]()</p>|
+|DOI badge: exists|3|[ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)|
+|Badges showing your style checkers|3|[Style Checker](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/checkers)
+|Badges showing your code formatters|2|[Formatters](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/checkers)
+|Badges showing your syntax checkers|3|[Syntax Checker](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/checkers)
+|Badges showing your code coverage tools|3|[README.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)
+|Other automated analysis tools|2|[README.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)|
 |Q1 - What your software does|||
 |1\.1) Does your website and documentation provide a clear, high-level overview of your software?|<p>                             YES</p>||
 |1\.2) Does your website and documentation clearly describe the type of user who should use your software?|<p>          YES</p>||
@@ -111,18 +124,3 @@ Project Name: Schedule Bot
 |16\.1) Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)?|YES||
 |16\.2) Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed?|NO||
 |16\.3) Do you make timely announcements of the deprecation of components, APIs, etc.?|NO||
-
-|Video|3|<p></p><p>[Youtube Link](https://youtu.be/n5qEw61pARw)</p>|
-|DOI badge: exists|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Use of style checkers|3|<p>[Style Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/PycharmStyleSyntax.xml)1</p><p></p><p>[Style Checkers2](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/pycodestyle.config)</p>|
-|Use of code formatters.|2|[code formatters](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
-|Use of syntax checkers.|3|[Syntax Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
-|Use of code coverage|3|[Git Badges](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Other automated analysis tools|2|config files in GH|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3|[CONTRIBUTING.md](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/CONTRIBUTING.md)|
-
-
-
-
-
-
