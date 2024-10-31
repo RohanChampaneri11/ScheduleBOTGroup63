@@ -3,18 +3,16 @@ Project Name: Schedule Bot
 
 |Notes|Marks/Points(0-3)|Evidence|
 | :- | :- | :- |
-|Video|3|<p></p><p>[Youtube Link](https://youtu.be/n5qEw61pARw)</p>|
-|Workload is spread over the whole team (one team member is often X times more productive than the others...|3|[Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main)|
-|But nevertheless, here is a track record that everyone is contributing a lot)|3|[Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main)|
-|Number of commits|3|667 commits<br>in GH|
-|Number of commits: by different people|3|<p>kgudipe - 17</p><p>achitti2812 - 13</p><p>saisanthoshgarlapati – 16</p><p>Rithwik - 14</p><p></p><p>Command: git shortlog -s -n</p>|
-|Issues reports: there are many|3|<p>0</p><p>[Open Issues](https://github.com/kgudipe/SEProj-ScheduleBot/issues?q=is%3Aopen+is%3Aissue)</p>|
-|Issues are being closed|3|<p>4</p><p></p><p>[Closed Issues](https://github.com/kgudipe/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p>|
-|DOI badge: exists|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Docs: docs generated, format not ugly|3|[Documentation](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/docs)|
-|Docs: what: point descriptions of each class/function (in isolation)|3|[Functionality1](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/docs/functionality)|
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|<p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)</p>|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|<p>Elaborate documentation,  detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Version](https://github.com/kgudipe/SE_PROJ/tree/main/Project2/asset) 5 [Video](https://www.youtube.com/watch?v=n5qEw61pARw)</p>|
+|Workload is spread over the whole team (one team member is often X times more productive than the others...|3|[Collaborators Commits Link]([https://github.com/kgudipe/SEProj-ScheduleBot/commits/main](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/main/))|
+|But nevertheless, here is a track record that everyone is contributing a lot)|3|[Collaborators Commits Link]([https://github.com/kgudipe/SEProj-ScheduleBot/commits/main](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/main/))|
+|Number of commits|3| commits<be> 702 in GH|
+|Number of commits: by different people|3|<p>Leslie - 13</p><p>Yiting - 4</p><p>Deepak – 4</p><p> </p><p></p><p>Command: git shortlog -s -n</p>|
+|Issues reports: there are many|3|<p>0</p><p>[Open Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aopen)</p>|
+|Issues are being closed|3|<p>4</p><p></p><p>[Closed Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p>|
+|Docs: docs generated, format not ugly|3|[Documentation](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs)|
+|Docs: what: point descriptions of each class/function (in isolation)|3|[Functionality1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/functionality)|
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|<p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)</p>|
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|<p>Elaborate documentation,  detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Video](https://www.youtube.com/watch?v=n5qEw61pARw)</p>|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
 |Use of version control tools|3|[Github](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
 |Use of style checkers|3|<p>[Style Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/PycharmStyleSyntax.xml)1</p><p></p><p>[Style Checkers2](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/pycodestyle.config)</p>|
@@ -57,8 +55,8 @@ Project Name: Schedule Bot
 |Q5 - How you support your software|||
 |5\.1) Does your software describe how a user can get help with using your software?|YES||
 |5\.2) Does your website and documentation describe what support, if any, you provide to users and developers?|YES||
-|5\.3) Does your project have an e-mail address or forum that is solely for supporting users?|NO||
-|5\.4) Are e-mails to your support e-mail address received by more than one person?|N/A||
+|5\.3) Does your project have an e-mail address or forum that is solely for supporting users?|YES||
+|5\.4) Are e-mails to your support e-mail address received by more than one person?|NO||
 |5\.5) Does your project have a ticketing system to manage bug reports and feature requests?|NO||
 |5\.6) Is your project's ticketing system publicly visible to your users, so they can view bug reports and feature requests?|N/A|<p></p><p></p>|
 |Q6 - Your software's maintainability|||
@@ -81,10 +79,10 @@ Project Name: Schedule Bot
 |Q11 - Building and installing your software|||
 |11\.1) Do you provide publicly-available instructions for building your software from the source code?|YES||
 |<p>11\.2) Can you build, or package, your software using an automated tool?\*</p><p>e.g. Make (<https://www.gnu.org/software/make/>), ANT (<http://ant.apache.org/>), Maven (<https://maven.apache.org/>), CMake (<https://cmake.org/>), Python setuptools (<https://pypi.python.org/pypi/setuptools>), or R package tools (<https://cran.r-project.org/doc/manuals/r-devel/R-exts.html>)</p><p></p>|NO||
-|11\.3) Do you provide publicly-available instructions for deploying your software?|NO||
+|11\.3) Do you provide publicly-available instructions for deploying your software?|YES||
 |11\.4) Does your documentation list all third-party dependencies?|YES||
 |11\.5) Does your documentation list the version number for all third-party dependencies?|YES||
-|11\.6) Does your software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or|NO||
+|11\.6) Does your software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or optional?|NO||
 |<p>11\.7) Can you download dependencies using a dependency management tool or package manager?\*</p><p>e.g. Ivy (<http://ant.apache.org/ivy/>), Maven (<https://maven.apache.org/>), Python pip (<https://pypi.python.org/pypi/pip>) or setuptools (<https://pypi.python.org/pypi/setuptools>), PHP Composer (<https://getcomposer.org/>), Ruby gems ([https://rubygems.org](https://rubygems.org/)), or R PackRat (<https://rstudio.github.io/packrat/>)</p><p></p>|YES|<p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>|
 |11\.8) Do you have tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful?|YES||
 |Q12 - How you test your software|||
@@ -120,8 +118,8 @@ Project Name: Schedule Bot
 |16\.2) Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed?|NO||
 |16\.3) Do you make timely announcements of the deprecation of components, APIs, etc.?|NO||
 
-
-
+|Video|3|<p></p><p>[Youtube Link](https://youtu.be/n5qEw61pARw)</p>|
+|DOI badge: exists|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
 
 
 
