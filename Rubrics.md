@@ -13,18 +13,12 @@ Project Name: Schedule Bot
 |Docs: what: point descriptions of each class/function (in isolation)|3|[Functionality1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/functionality)|
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|<p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)</p>|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|<p>Elaborate documentation,  detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Video](https://www.youtube.com/watch?v=n5qEw61pARw)</p>|
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Use of version control tools|3|[Github](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Use of style checkers|3|<p>[Style Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/PycharmStyleSyntax.xml)1</p><p></p><p>[Style Checkers2](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/pycodestyle.config)</p>|
-|Use of code formatters.|2|[code formatters](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
-|Use of syntax checkers.|3|[Syntax Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
-|Use of code coverage|3|[Git Badges](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
-|Other automated analysis tools|2|config files in GH|
-|Test cases exist|3|[CodeCov](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/test)|
-|Test cases are routinely executed|3| <br>[File1](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/test)|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3|[CONTRIBUTING.md](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/CONTRIBUTING.md)|
-|Issues are discussed before they are closed|3|<p>[Discussion1](https://github.com/kgudipe/SEProj-ScheduleBot/issues/1)</p><p>[Discussion2](https://github.com/kgudipe/SEProj-ScheduleBot/issues/2)</p><p>[Discussion3](https://github.com/kgudipe/SEProj-ScheduleBot/issues/3)</p><p>[Discussion4](https://github.com/kgudipe/SEProj-ScheduleBot/issues/4)</p>|
-|Chat channel: exists|3|[Chat Channel](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/docs/Whatsapp)|
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)|
+|Use of version control tools|3|[Github](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot)|
+|Test cases exist|3|[CodeCov](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/test)|
+|Test cases are routinely executed|3| <br>[File1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/test)|
+|Issues are discussed before they are closed|3|<p>[Discussion1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues/2)</p><p>[Discussion2]()</p><p>[Discussion3]()</p><p>[Discussion4]()</p>|
+|Chat channel: exists|3|[Chat Channel](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/Discord)|
 |Test cases: a large proportion of the issues related to handling failing cases.|3|[Test Cases](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/test)|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files|3|[CheckCommits](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/requirements.txt)|
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|3|<p> </p><p>[Requirements.txt](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/requirements.txt) is installed by everyone.</p>|
@@ -120,6 +114,12 @@ Project Name: Schedule Bot
 
 |Video|3|<p></p><p>[Youtube Link](https://youtu.be/n5qEw61pARw)</p>|
 |DOI badge: exists|3|[ReadMe](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
+|Use of style checkers|3|<p>[Style Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/PycharmStyleSyntax.xml)1</p><p></p><p>[Style Checkers2](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/checkers/pycodestyle.config)</p>|
+|Use of code formatters.|2|[code formatters](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
+|Use of syntax checkers.|3|[Syntax Checkers](https://github.com/kgudipe/SEProj-ScheduleBot/tree/main/checkers)|
+|Use of code coverage|3|[Git Badges](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/README.md)|
+|Other automated analysis tools|2|config files in GH|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3|[CONTRIBUTING.md](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/CONTRIBUTING.md)|
 
 
 
