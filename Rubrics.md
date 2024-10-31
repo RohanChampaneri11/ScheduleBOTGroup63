@@ -10,7 +10,7 @@ Project Name: Schedule Bot
 |Issues reports: there are many|3|<p>0</p><p>[Open Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aopen)</p>|
 |Issues are being closed|3|<p>4</p><p></p><p>[Closed Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p>|
 |Docs: docs generated, format not ugly|3|[Documentation](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs)|
-|Docs: what: point descriptions of each class/function (in isolation)|3|[Functionality1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/functionality)|
+|Docs: what: point descriptions of each class/function (in isolation)|3|[Functionality](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/docs/functionality)|
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|<p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)</p>|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|<p>Elaborate documentation,  detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Video](https://www.youtube.com/watch?v=n5qEw61pARw)</p>|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|[ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md)|
