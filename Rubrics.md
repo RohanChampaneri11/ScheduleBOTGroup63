@@ -11,7 +11,7 @@ Project Name: Schedule Bot
 | Docs: docs generated, format not ugly | 3 | 3 | 3 | [Documentation](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/docs) |
 | Docs: what: point descriptions of each class/function (in isolation) | 3 | 3 | 3 | [Functionality](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/docs/functionality) |
 | Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z | 3 | 3 | 3 | <p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/README.md)</p> |
-| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | 3 | 3 | <p>Elaborate documentation, detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Video](https://www.youtube.com/watch?v=n5qEw61pARw)</p> |
+| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | 3 | 3 | <p>Elaborate documentation, detailed explanation of the functionality and how to use the bot has made it easy to understand and utilize it to its full capacity</p><p></p><p>[Video](https://www.youtube.com/watch?v=MkkVSjkeQ90)</p> |
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | 3 | 3 | 3 | [ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/README.md) |
 | Use of version control tools | 3 | 3 | 3 | [Github](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024) |
 | Test cases exist | 3 | 3 | 3 | [CodeCov](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/test) |
@@ -30,7 +30,7 @@ Project Name: Schedule Bot
 | The file CODE-OF-CONDUCT.md lists rules of behavior for this repo; e.g. see example | 3 | 3 | 3 | [CODE-OF-CONDUCT.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/CODE_OF_CONDUCT.md) |
 | The file CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up; e.g. see example | 3 | 3 | 3 | [CONTRIBUTING.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/CONTRIBUTING.md) |
 | The file README.md contains all the following | 3 | 3 | 3 | [README.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/README.md) |
-| Video | 3 | 3 | 3 | <p></p><p>[Youtube Link]()</p> |
+| Video | 3 | 3 | 3 | <p></p><p>[Youtube Link](https://www.youtube.com/watch?v=MkkVSjkeQ90)</p> |
 | DOI badge: exists | 3 | 3 | 3 | [ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/README.md) |
 | Badges showing your style checkers | 3 | 3 | 3 | [Style Checker](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/checkers) |
 | Badges showing your code formatters | 2 | 2 | 2 | [Formatters](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/checkers) |
