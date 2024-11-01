@@ -1,6 +1,7 @@
 import discord  # type: ignore
 from discord.ext import commands  # type: ignore
 import os
+import shutil
 import aiohttp
 import json
 import asyncio
@@ -22,6 +23,14 @@ from functionality.Google import connect_google
 from functionality.GoogleEvent import get_events
 from functionality.Delete_Event import delete_event
 from functionality.Edit_event import edit_event
+from functionality.shared_functions import (
+        add_event_to_file_main,
+        fetch_google_events,
+        parse_google_event,
+        check_passkey,
+        create_event_tree,
+        read_event_file,
+    )
 from config import GOOGLE_API_KEY, CLEAR_DATA_PASSKEY
 
 # Configure logging
@@ -276,19 +285,11 @@ async def syncEvents(ctx, passkey: str):
     Synchronizes the next 10 Google Calendar events to local storage after verifying the passkey.
     Usage: !syncEvents <passkey>
     """
-    from functionality.shared_functions import (
-        add_event_to_file_main,
-        fetch_google_events,
-        parse_google_event,
-        check_passkey,
-        create_event_tree,
-        read_event_file,
-    )
-
-    # if not check_passkey(passkey):
-    #     await ctx.send("❌ Invalid passkey. Access denied.")
-    #     logger.warning(f"Unauthorized attempt to use syncEvents by {ctx.author} (ID: {ctx.author.id})")
-    #     return
+    print("check:", passkey, CLEAR_DATA_PASSKEY)
+    if not check_passkey(passkey, CLEAR_DATA_PASSKEY):
+        await ctx.send("❌ Invalid passkey. Access denied.")
+        logger.warning(f"Unauthorized attempt to use syncEvents by {ctx.author} (ID: {ctx.author.id})")
+        return
 
     # Send a confirmation prompt
     await ctx.send("⚠️ **WARNING**: This action will synchronize the next 10 Google Calendar events to local storage. Type `CONFIRM` to proceed.")
@@ -413,11 +414,12 @@ async def on_ready():
             if isinstance(channel, discord.TextChannel):
                 text_channel_count += 1
                 msg = await channel.send(
-                    "👋 Hello! I am **ScheduleBot**, your personal scheduling assistant.\n\n"
-                    "React to this message with a '⏰' (\:alarm_clock\:) emoji to receive a direct message from me!\n"
-                    "Make sure you have allowed non-friends to DM you, or I won't be able to assist you."
+                "👋 Hello there! I'm **ScheduleBot**, your personal assistant for staying organized and on time. 🕒✨\n\n"
+                "If you're ready to start, react to this message with the '🤖' (alarm clock) emoji, and I'll slide into your DMs with all the details!\n"
+                "🔒 Just make sure you've enabled DMs from non-friends, so I can reach you easily!"
                 )
-                await msg.add_reaction("⏰")
+
+                await msg.add_reaction("🤖")
         print(f"Sent Welcome Message to {text_channel_count} Text Channel(s)")
     except Exception as e:
         traceback.print_exc()
@@ -430,12 +432,14 @@ async def on_reaction_add(reaction, user):
     """
     try:
         emoji = reaction.emoji
-        if emoji == "⏰" and not user.bot:
+        if emoji == "🤖" and not user.bot:
             try:
                 await user.send(
-                    f"👋 Nice to meet you, {user.name}! I am **ScheduleBot**, here to make managing your schedule easier.\n\n"
-                    "Type `!help` to see all available commands and get started!"
+                f"👋 Hey there, {user.name}! I'm **ScheduleBot**, your personal assistant for all things scheduling! 📅✨\n\n"
+                "Think of me as your trusty sidekick, here to help you stay on top of your plans and make life a little smoother.\n\n"
+                "Type `!help` whenever you're ready to explore all the ways I can lend a hand. Let's get organized and make each day count! 🚀"
                 )
+
             except discord.Forbidden:
                 print(f"{user.name} ({user.id}) does not have DM permissions set correctly.")
             except Exception as e:
@@ -649,15 +653,15 @@ async def editEvent(ctx):
         await ctx.send("Sorry, an error occurred while attempting to edit the event.")
 
 @bot.command()
-@commands.is_owner()  # Only the bot owner can use this command
+# @commands.is_owner()  # Only the bot owner can use this command
 async def clearData(ctx, passkey: str):
     """
     Deletes all event data in the Event Data Directory after verifying the passkey.
     Usage: !clearData <passkey>
     """
-    if passkey != CLEAR_DATA_PASSKEY:
+    if not check_passkey(passkey, CLEAR_DATA_PASSKEY):
         await ctx.send("❌ Invalid passkey. Access denied.")
-        logger.warning(f"Unauthorized attempt to use clearData by {ctx.author} (ID: {ctx.author.id})")
+        logger.warning(f"Unauthorized attempt to use syncEvents by {ctx.author} (ID: {ctx.author.id})")
         return
 
     # Send a confirmation prompt
