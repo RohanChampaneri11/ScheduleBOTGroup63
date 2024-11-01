@@ -446,8 +446,7 @@ We’ve introduced a new feature: a Generative AI chatbot! Now, by typing `!ask`
 ```
 !ask [your question here]
 ```
-[![Watch the video](https://img.youtube.com/vi/MkkVSjkeQ90/0.jpg)](https://www.youtube.com/watch?v=MkkVSjkeQ90)
-
+https://github.com/user-attachments/assets/d1025cae-3f6b-4500-b483-152035928006
 
 #### 2. Admin Control
 Have events on your Google Calendar? No problem! Once you connect your Google account, Schedule Bot can fetch and display your calendar events. Just use the command `!syncEvents` followed by your password. You’ll receive a confirmation prompt—-type `CONFIRM` in all caps, and the bot will sync your schedule. You can clear all locally stored events by using the command
