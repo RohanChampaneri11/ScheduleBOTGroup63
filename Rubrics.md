@@ -16,7 +16,7 @@ Project Name: Schedule Bot
 | Use of version control tools | 3 | 3 | 3 | [Github](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024) |
 | Test cases exist | 3 | 3 | 3 | [CodeCov](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/test) |
 | Test cases are routinely executed | 3 | 3 | 3 | <br>[File1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/test) |
-| Issues are discussed before they are closed | 3 | 3 | 3 | <p>[Discussion1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues/2)</p><p>[Discussion2]()</p><p>[Discussion3]()</p><p>[Discussion4]()</p> |
+| Issues are discussed before they are closed | 3 | 3 | 3 | <p>[Discussion1](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues/2)</p><p>[Discussion2](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues/1)</p> |
 | Chat channel: exists | 3 | 3 | 3 | [Chat Channel](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/docs/Discord) |
 | Test cases: a large proportion of the issues related to handling failing cases. | 3 | 3 | 3 | [Test Cases](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/test) |
 | Evidence that the whole team is using the same tools: everyone can get to all tools and files | 3 | 3 | 3 | [CheckCommits](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/requirements.txt) |
