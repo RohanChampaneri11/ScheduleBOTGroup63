@@ -1,4 +1,11 @@
-Project Name: Schedule Bot
+# Project Name: Schedule Bot
+## SE Group 19
+- Leslie - tliu33
+- Yi Ting Hou - yhou9
+- Deepak - dpendya
+#### Project link: [https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024)
+
+## Rubrics
 
 | Notes | Marks/Points(0-3): Leslie | Marks/Points(0-3): Yi-Ting | Marks/Points(0-3): Deepak | Evidence |
 | :- | :- | :- | :- | :- |
