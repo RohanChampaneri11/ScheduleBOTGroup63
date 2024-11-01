@@ -463,7 +463,7 @@ The third feature allows you to delete an event you no longer need, with updates
 !deleteEvent
 ```
 ```
-[index of event that needs to be deleted]
+[index of the event being deleted]
 ```
 
 #### 4. Code improvement
