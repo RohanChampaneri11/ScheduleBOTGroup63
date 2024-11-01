@@ -438,16 +438,38 @@ Currently, the events can be deleted on discord. What can be added is, getting t
 Refer to Rubric.md file [here](https://github.com/kgudipe/SEProj-ScheduleBot/blob/main/Rubrics.md)
 
 
+
+:ghost:	What's new in V6
+--
+#### 1. Generative AI chatbot
+We’ve introduced a new feature: a Generative AI chatbot! Now, by typing `!ask` followed by your question, you can get answers directly from the bot. For example, let’s try asking, "Where is North Carolina State University?"
+```
+!ask [your question here]
+```
+
+#### 2. Synchronize your Google calendar
+Have events on your Google Calendar? No problem! Once you connect your Google account, Schedule Bot can fetch and display your calendar events. Just use the command `!syncEvents` followed by your password. You’ll receive a confirmation prompt—-type `CONFIRM` in all caps, and the bot will sync your schedule.
+
+```
+!syncEvents [your password here]
+```
+```
+CONFIRM
+```
+
+#### 3. Delete an event with synchronization
+The third feature allows you to delete an event you no longer need, with updates syncing directly to your Google Calendar. Previously, deleting an event within Discord only removed it locally, leaving it on your Google Calendar. Now, any event you remove from Schedule Bot is seamlessly deleted from your Google Calendar too, keeping both in sync.
+
+#### 4. Code improvement
+We’ve added error handling to Schedule Bot. Now, if the bot encounters an issue, it won’t stop running. Instead, it will display an error message and continue processing your next command. We also introduced a logging function to Schedule Bot, which now records the result of every command. This feature allows you to review past interactions and helps us improve troubleshooting by providing a clear record of each command’s outcome. 
+
 ## Collaborators
-AkhilSai Chittipolu 
+Leslie Liu 
 
 
-Koushik Gudipelly
+Yiting Hou
 
 
-Sai Rithwik Pokala
-
-
-Sai Santhosh Garlapati
+Deepak Sai Pendyala
 
 
