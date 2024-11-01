@@ -10,7 +10,11 @@ import asyncio
 from datetime import datetime
 from dateutil import parser
 from functionality.Google import connect_google
-from config import CLEAR_DATA_PASSKEY
+from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 def add_event_to_file_main(user_id, event_data):
     """
@@ -52,20 +56,24 @@ def add_event_to_file_main(user_id, event_data):
 
 async def fetch_google_events(ctx, max_results=10):
     """
-    Fetches upcoming events from Google Calendar.
+    Fetches upcoming events from Google Calendar for the authenticated user.
 
-    Input:
-        ctx - The context from which to get the user and send messages.
-        max_results - The maximum number of events to fetch.
-    Output:
-        A list of Google Calendar events.
+    Parameters:
+        ctx (commands.Context): The context from which to get the user and send messages.
+        max_results (int): The maximum number of events to fetch.
+
+    Returns:
+        Tuple[List[Dict], Optional[str]]: A tuple containing the list of events and an optional error message.
     """
+    # Use the updated connect_google function which handles user-specific credentials
     service = await connect_google(ctx)
     if service is None:
-        return None, "Failed to connect to Google Calendar."
+        error_message = "Failed to connect to Google Calendar. Please try connecting again using `!ConnectGoogle`."
+        await ctx.send(error_message)
+        return None, error_message
 
     try:
-        now = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
+        now = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time in ISO format
         events_result = service.events().list(
             calendarId='primary',
             timeMin=now,
@@ -74,9 +82,13 @@ async def fetch_google_events(ctx, max_results=10):
             orderBy='startTime'
         ).execute()
         events = events_result.get('items', [])
+        logger.debug(f"Fetched {len(events)} events for user {ctx.author.id}")
         return events, None
     except Exception as e:
-        return None, f"An error occurred while fetching events: {e}"
+        error_message = f"An error occurred while fetching events: {e}"
+        logger.error(error_message)
+        await ctx.send("An error occurred while fetching your Google Calendar events.")
+        return None, error_message
 
 def parse_google_event(event):
     """
@@ -114,7 +126,7 @@ def parse_google_event(event):
     return local_event
 
 
-def check_passkey(provided_passkey):
+def check_passkey(provided_passkey, CLEAR_DATA_PASSKEY):
     """
     Checks if the provided passkey matches the one in the environment variable.
 
@@ -123,7 +135,6 @@ def check_passkey(provided_passkey):
     Output:
         True if the passkey matches, False otherwise.
     """
-    CLEAR_DATA_PASSKEY = os.getenv('CLEAR_DATA_PASSKEY')
     return provided_passkey == CLEAR_DATA_PASSKEY
 
 
