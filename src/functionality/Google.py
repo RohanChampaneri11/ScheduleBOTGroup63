@@ -23,16 +23,19 @@ async def connect_google(ctx):
     json_dir = os.path.join(parent_dir, "json")               # ...\json
     logger.debug(f"JSON directory: {json_dir}")
 
-    # Paths to required JSON files
-    user_data_path = os.path.join(json_dir, "user_data.json")
-    key_data_path = os.path.join(json_dir, "key.json")
-    cred_file_path = os.path.join(json_dir, "credentials.json")
-    token_file_path = os.path.join(json_dir, "token.json")
+    # Paths to required JSON files and user-specific token
+    user_id = str(ctx.author.id)  # Use Discord user ID to isolate credentials
+    token_file_path = os.path.join(json_dir, "tokens", f"{user_id}_token.json")  # user-specific token path
 
-    logger.debug(f"User data path: {user_data_path}")
-    logger.debug(f"Key data path: {key_data_path}")
-    logger.debug(f"Credentials file path: {cred_file_path}")
-    logger.debug(f"Token file path: {token_file_path}")
+    # Create tokens directory if it does not exist
+    tokens_dir = os.path.join(json_dir, "tokens")
+    if not os.path.exists(tokens_dir):
+        os.makedirs(tokens_dir)
+        logger.debug(f"Created tokens directory at {tokens_dir}")
+
+    # Paths for shared files
+    cred_file_path = os.path.join(json_dir, "credentials.json")
+    key_data_path = os.path.join(json_dir, "key.json")
 
     # Send DM to user
     channel = await ctx.author.create_dm()
@@ -41,20 +44,6 @@ async def connect_google(ctx):
     # Check if API Key file exists
     if not os.path.exists(key_data_path):
         error_message = "API Key file does not exist. Please refer to the README to add the key and restart the program."
-        logger.error(error_message)
-        await channel.send(error_message)
-        return None  # Return None to indicate failure
-
-    # Load API Key
-    try:
-        with open(key_data_path, 'r') as key_file:
-            key_data = json.load(key_file)
-            api_key_1 = key_data.get("key")
-            if not api_key_1:
-                raise ValueError("API key not found in key.json.")
-            logger.info("API key found.")
-    except Exception as e:
-        error_message = f"Error loading API key: {e}"
         logger.error(error_message)
         await channel.send(error_message)
         return None
@@ -66,13 +55,13 @@ async def connect_google(ctx):
         await channel.send(error_message)
         return None
 
-    # Load existing credentials if available
+    # Load existing user-specific credentials if available
     if os.path.exists(token_file_path):
         try:
             creds = Credentials.from_authorized_user_file(token_file_path, SCOPES)
-            logger.info("Credentials loaded from token.json.")
+            logger.info(f"Credentials loaded from {token_file_path}.")
         except Exception as e:
-            logger.error(f"Error loading credentials from token.json: {e}")
+            logger.error(f"Error loading credentials from {token_file_path}: {e}")
             creds = None
 
     # If no valid credentials, initiate OAuth flow
@@ -98,11 +87,11 @@ async def connect_google(ctx):
                 await channel.send(error_message)
                 return None
 
-            # Save the credentials for the next run
+            # Save the user-specific credentials for the next run
             try:
                 with open(token_file_path, 'w') as token_file:
                     token_file.write(creds.to_json())
-                logger.info("Credentials saved to token.json.")
+                logger.info(f"Credentials saved to {token_file_path}.")
             except Exception as e:
                 logger.error(f"Error saving credentials: {e}")
                 await channel.send("Failed to save credentials.")
