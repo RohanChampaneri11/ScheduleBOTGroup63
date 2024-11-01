@@ -461,6 +461,7 @@ CONFIRM
 ```
 !clearData [your password here]
 ```
+https://github.com/user-attachments/assets/593f15eb-caa4-4b4b-bda7-79011f179b10
 
 #### 3. Delete an event with synchronization
 The third feature allows you to delete an event you no longer need, with updates syncing directly to your Google Calendar. Previously, deleting an event within Discord only removed it locally, leaving it on your Google Calendar. Now, any event you remove from Schedule Bot is seamlessly deleted from your Google Calendar too, keeping both in sync.
@@ -473,7 +474,9 @@ The third feature allows you to delete an event you no longer need, with updates
 https://github.com/user-attachments/assets/91be8c5a-719e-4dbe-952c-6b6506b17bec
 
 #### 4. Code improvement
-We’ve added error handling to Schedule Bot. Now, if the bot encounters an issue, it won’t stop running. Instead, it will display an error message and continue processing your next command. We also introduced a logging function to Schedule Bot, which now records the result of every command. This feature allows you to review past interactions and helps us improve troubleshooting by providing a clear record of each command’s outcome. 
+We’ve added error handling to Schedule Bot. Now, if the bot encounters an issue, it won’t stop running. Instead, it will display an error message and continue processing your next command. We also introduced a logging function to Schedule Bot, which now records the result of every command. This feature allows you to review past interactions and helps us improve troubleshooting by providing a clear record of each command’s outcome. Finally, this project emphasizes modular, refactored code by organizing each function into clear, manageable modules. Core logic like event handling, data storage, and Google Calendar integration is separated within a functionality folder, with shared utilities for data encryption, file handling, and other common tasks in a shared_functions module. The main bot logic in schedulebot.py accesses these modules, making the bot easier to update, troubleshoot, and scale.
+
+https://github.com/user-attachments/assets/28e0dca5-1abb-455d-9bff-03e6e36263aa
 
 ## Collaborators
 Leslie Liu 
