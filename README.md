@@ -2,7 +2,7 @@
 
 ![Python v3.9](https://img.shields.io/badge/python-v3.9-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/kgudipe/SEProj-ScheduleBot/graphs/commit-activity) [![Contributors Activity](https://img.shields.io/github/commit-activity/m/kgudipe/SEProj-ScheduleBot)](https://github.com/kgudipe/SEProj-ScheduleBot/pulse)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/graphs/commit-activity) [![Contributors Activity](https://img.shields.io/github/commit-activity/m/kgudipe/SEProj-ScheduleBot)](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/pulse)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211125.svg)](https://doi.org/10.5281/zenodo.10211125)
 ![example workflow](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/style_checker.yml/badge.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/qchen59/ScheduleBot)
