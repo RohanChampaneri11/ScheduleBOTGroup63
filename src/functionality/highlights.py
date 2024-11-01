@@ -27,42 +27,40 @@ async def get_highlight(ctx, arg):
             'location': row[7]
         }
         flag = check_start_or_end([event['startDate'], event['endDate']], day)
-        dates = [event['startDate'], event['endDate']]
         event['flag'] = flag
 
         if flag:
             events.append(event)
 
     for e in events:
-    # Check if event starts and ends today
         if e['flag'] == 1:
             await channel.send(f"You have {e['name']} scheduled, from {e['startTime']} to {e['endTime']}")
-        # Weather report only for events starting and ending today
+            
+            # Weather report only for events starting and ending today
             if e['name'] != 'Travel' and e['location'] not in ['', 'online', 'Online']:
                 latlng = get_lat_log(e['location'], get_key())
-                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
+                if latlng is not None:
+                    humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
+                    weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
+                    await channel.send(weather_message)
+                else:
+                    await channel.send("Could not retrieve location data for weather.")
 
-            # Create and send the weather message
-                weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
-                await channel.send(weather_message)
-
-    # Check if event starts today but ends on a future date
         elif e['flag'] == 2:
-        # Formatting end date for display
             end_date_formatted = e['endDate'].split('-')
             end_date_formatted = f"{end_date_formatted[1]}/{end_date_formatted[2]}/{end_date_formatted[0]}"
             await channel.send(f"You have {e['name']} scheduled, from {e['startTime']} on {e['startDate']} to {e['endTime']} on {end_date_formatted}")
-
-        # Weather report only for events starting today
+            
+            # Weather report only for events starting today
             if e['name'] != 'Travel' and e['location'] not in ['', 'online', 'Online']:
                 latlng = get_lat_log(e['location'], get_key())
-                humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
+                if latlng is not None:
+                    humidity, cel, fah, feels_like, desc = getWeatherData(latlng, e['startDate'])
+                    weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
+                    await channel.send(weather_message)
+                else:
+                    await channel.send("Could not retrieve location data for weather.")
 
-            # Create and send the weather message
-                weather_message = create_weather_message(fah, feels_like, e['name'], e['startDate'])
-                await channel.send(weather_message)
-
-    # No weather report for events that end today but started earlier
         elif e['flag'] == 3:
             await channel.send(f"You have {e['name']} scheduled, till {e['endTime']}")
 
@@ -81,25 +79,20 @@ def create_weather_message(fah, feels_like, event_name, event_date):
         return f"The temperature is {fah:.1f}°F and it feels like {feels_like:.1f}°F for {event_name} on {event_date}"
 
 
-
-
 def get_date(arg):
     if re.match("tomorrow", arg, re.I):
         return str(date.today() + datetime.timedelta(days=1))
     if re.match("yesterday", arg, re.I):
         return str(date.today() - datetime.timedelta(days=1))
-    if re.fullmatch("\d+", arg):
+    if re.fullmatch(r"\d+", arg):
         return str(date.today() + datetime.timedelta(days=int(arg)))
-    if re.fullmatch("-\d+", arg):
+    if re.fullmatch(r"-\d+", arg):
         return str(date.today() - datetime.timedelta(days=int(arg[1:])))
-    if re.fullmatch("\d\d/\d\d/\d\d", arg):
+    if re.fullmatch(r"\d\d/\d\d/\d\d", arg):
         return str(datetime.datetime.strptime(arg, "%m/%d/%y").date())
     if re.match("today", arg, re.I):
         return str(date.today())
     return None
-
-
-
 
 
 def check_start_or_end(dates, today):
@@ -107,16 +100,17 @@ def check_start_or_end(dates, today):
         return True
     return False
 
+
 def convert_to_12(time):
     """
     Function:
-        conver_to_12
+        convert_to_12
     Description:
-        Converts 24 hour time to 12 hour format
+        Converts 24-hour time to 12-hour format
     Input:
-        - time - time string in 24 hour format
+        - time - time string in 24-hour format
     Output:
-        - time string converted to 12 hour format
+        - time string converted to 12-hour format
     """
     if int(time[:2]) > 12:
         new_time = str(int(time[:2]) - 12) + ":" + time[3:] + " PM"
@@ -129,5 +123,3 @@ def convert_to_12(time):
     else:
         new_time = time[1:] + " AM"
     return new_time
-
-# test()
