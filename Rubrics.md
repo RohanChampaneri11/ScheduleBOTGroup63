@@ -30,7 +30,7 @@ Project Name: Schedule Bot
 | The file CODE-OF-CONDUCT.md lists rules of behavior for this repo; e.g. see example | 3 | 3 | 3 | [CODE-OF-CONDUCT.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/CODE_OF_CONDUCT.md) |
 | The file CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up; e.g. see example | 3 | 3 | 3 | [CONTRIBUTING.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/CONTRIBUTING.md) |
 | The file README.md contains all the following | 3 | 3 | 3 | [README.md](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md) |
-| Video | 3 | 3 | 3 | <p></p><p>[Youtube Link]()</p> |
+| Video | 3 | 3 | 3 | <p></p><p>[Youtube Link](https://www.youtube.com/watch?v=MkkVSjkeQ90)</p> |
 | DOI badge: exists | 3 | 3 | 3 | [ReadMe](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/main/README.md) |
 | Badges showing your style checkers | 3 | 3 | 3 | [Style Checker](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/checkers) |
 | Badges showing your code formatters | 2 | 2 | 2 | [Formatters](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/main/checkers) |
