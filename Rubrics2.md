@@ -2,8 +2,8 @@ Project Name: Schedule Bot
 
 | Notes | Marks/Points(0-3): Leslie | Marks/Points(0-3): Yi-Ting | Marks/Points(0-3): Deepak | Evidence |
 | :- | :- | :- | :- | :- |
-| Workload is spread over the whole team (one team member is often X times more productive than the others... | 3 | 3 | 3 | [Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main) |
-| But nevertheless, here is a track record that everyone is contributing a lot) | 3 | 3 | 3 | [Collaborators Commits Link](https://github.com/kgudipe/SEProj-ScheduleBot/commits/main) |
+| Workload is spread over the whole team (one team member is often X times more productive than the others... | 3 | 3 | 3 | [Collaborators Commits Link](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/main/) |
+| But nevertheless, here is a track record that everyone is contributing a lot) | 3 | 3 | 3 | [Collaborators Commits Link](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/main/) |
 | Number of commits | 3 | 3 | 3 | commits<br>702 in GH |
 | Number of commits: by different people | 3 | 3 | 3 | <p>Leslie - 13</p><p>Yiting - 4</p><p>Deepak – 4</p><p></p><p>Command: git shortlog -s -n</p> |
 | Issues reports: there are many | 3 | 3 | 3 | <p>0</p><p>[Open Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aopen)</p> |
