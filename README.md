@@ -459,6 +459,12 @@ CONFIRM
 
 #### 3. Delete an event with synchronization
 The third feature allows you to delete an event you no longer need, with updates syncing directly to your Google Calendar. Previously, deleting an event within Discord only removed it locally, leaving it on your Google Calendar. Now, any event you remove from Schedule Bot is seamlessly deleted from your Google Calendar too, keeping both in sync.
+```
+!deleteEvent
+```
+```
+[index of event that needs to be deleted]
+```
 
 #### 4. Code improvement
 We’ve added error handling to Schedule Bot. Now, if the bot encounters an issue, it won’t stop running. Instead, it will display an error message and continue processing your next command. We also introduced a logging function to Schedule Bot, which now records the result of every command. This feature allows you to review past interactions and helps us improve troubleshooting by providing a clear record of each command’s outcome. 
