@@ -6,8 +6,8 @@ Project Name: Schedule Bot
 | But nevertheless, here is a track record that everyone is contributing a lot) | 3 | 3 | 3 | [Collaborators Commits Link](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/commits/fall_2024) |
 | Number of commits | 3 | 3 | 3 | commits<br>748 in GH |
 | Number of commits: by different people | 3 | 3 | 3 | <p>Leslie - 11</p><p>Yiting - 14</p><p>Deepak – 10</p><p></p><p>Command: git shortlog -s -n</p> |
-| Issues reports: there are many | 3 | 3 | 3 | <p>5</p><p>[Open Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aopen)</p> |
-| Issues are being closed | 3 | 3 | 3 | <p>2</p><p></p><p>[Closed Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p> |
+| Issues reports: there are many | 3 | 3 | 3 | <p>0</p><p>[Open Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aopen)</p> |
+| Issues are being closed | 3 | 3 | 3 | <p>7</p><p></p><p>[Closed Issues](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/issues?q=is%3Aissue+is%3Aclosed)</p> |
 | Docs: docs generated, format not ugly | 3 | 3 | 3 | [Documentation](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/docs) |
 | Docs: what: point descriptions of each class/function (in isolation) | 3 | 3 | 3 | [Functionality](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/tree/fall_2024/docs/functionality) |
 | Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z | 3 | 3 | 3 | <p>Screenshots were placed for all the features newly added and placed in the README.md</p><p></p><p>[doc page entries](https://github.com/CSC510-Leslie-Tim-Deepak/SEProj-ScheduleBot/blob/fall_2024/README.md)</p> |
