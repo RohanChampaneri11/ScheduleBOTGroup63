@@ -446,7 +446,7 @@ We’ve introduced a new feature: a Generative AI chatbot! Now, by typing `!ask`
 ```
 !ask [your question here]
 ```
-https://github.com/user-attachments/assets/d1025cae-3f6b-4500-b483-152035928006
+https://github.com/user-attachments/assets/a2a056f1-7831-4dd1-877c-b7c14b42ced9
 
 #### 2. Admin Control
 Have events on your Google Calendar? No problem! Once you connect your Google account, Schedule Bot can fetch and display your calendar events. Just use the command `!syncEvents` followed by your password. You’ll receive a confirmation prompt—-type `CONFIRM` in all caps, and the bot will sync your schedule. You can clear all locally stored events by using the command
@@ -470,6 +470,7 @@ The third feature allows you to delete an event you no longer need, with updates
 ```
 [index of the event being deleted]
 ```
+https://github.com/user-attachments/assets/91be8c5a-719e-4dbe-952c-6b6506b17bec
 
 #### 4. Code improvement
 We’ve added error handling to Schedule Bot. Now, if the bot encounters an issue, it won’t stop running. Instead, it will display an error message and continue processing your next command. We also introduced a logging function to Schedule Bot, which now records the result of every command. This feature allows you to review past interactions and helps us improve troubleshooting by providing a clear record of each command’s outcome. 
