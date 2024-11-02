@@ -1,113 +1,159 @@
 # tests/test_shared_functions.py
 
 import pytest
+from unittest.mock import AsyncMock, MagicMock, patch
 from datetime import datetime
-from functionality.shared_functions import check_start_or_end  # Adjust the import path as necessary
+from functionality.shared_functions import (
+    read_event_file,
+    add_event_to_file,
+    check_start_or_end
+)  # Adjust imports based on your project structure
+from Event import Event  # Adjust import based on your project structure
+import pandas as pd
 
-@pytest.mark.asyncio
-async def test_add_event_success(mock_ctx, mock_client, mock_google_credentials, mock_google_build):
+# ----------------------------
+# Test for add_event_to_file
+# ----------------------------
+def test_add_event_to_file():
     """
-    Test the add_event function for a successful event creation flow.
+    Test adding a new event to the event file and verifying it was added successfully.
     """
-    from functionality.AddEvent import add_event  # Import inside to avoid circular dependencies
-
-    # Mock user inputs sequentially
-    mock_client.wait_for.side_effect = [
-        MagicMock(content="Test Event"),  # Event name
-        MagicMock(content="09/29/21 09:30 am 09/29/21 11:30 am"),  # Start and end dates
-        MagicMock(content="5"),  # Priority
-        MagicMock(content="Meeting"),  # Event type
-        MagicMock(content="Office"),  # Location
-        MagicMock(content="Yes"),  # Travel time flag
-        MagicMock(content="DRIVING"),  # Mode of transport
-        MagicMock(content="123 Main St"),  # Source address
-        MagicMock(content="This is a test event."),  # Description
-    ]
-
-    # Mock external functions and dependencies
-    with patch('functionality.AddEvent.create_event_type', AsyncMock()) as mock_create_event_type, \
-         patch('functionality.AddEvent.get_distance', return_value=(1800, 'https://maps.google.com/?q=123+Main+St')) as mock_get_distance, \
-         patch('functionality.AddEvent.add_event_to_file', MagicMock()) as mock_add_event_to_file, \
-         patch('functionality.AddEvent.create_event_tree', MagicMock()) as mock_create_event_tree, \
-         patch('functionality.AddEvent.turn_types_to_string', return_value="Meeting, Appointment, Reminder") as mock_turn_types_to_string, \
-         patch('functionality.AddEvent.parse_period', return_value=(
-             datetime(2021, 9, 29, 9, 30),
-             datetime(2021, 9, 29, 11, 30)
-         )) as mock_parse_period, \
-         patch('functionality.AddEvent.parse_period24', return_value=(None, None)) as mock_parse_period24:
-             
-            await add_event(mock_ctx, mock_client)
-
-    # Assertions to ensure each step was called correctly
-    mock_ctx.author.create_dm.assert_awaited_once()
-    assert mock_client.wait_for.call_count == 9, f"Expected 9 wait_for calls, but got {mock_client.wait_for.call_count}"
-
-    # Expected send messages
-    expected_messages = [
-        "Let's add an event!\nWhat is the name of your event?",
-        "Now give me the start & end dates for your event. "
-        "You can use 12-hour or 24-hour formatting.\n\n"
-        "Format (Start is first, end is second):\n"
-        "12-hour: mm/dd/yy hh:mm am/pm mm/dd/yy hh:mm am/pm\n"
-        "24-hour: mm/dd/yy hh:mm mm/dd/yy hh:mm",
-        "How important is this event? Enter a number between 1-5.\n\n"
-        "5 - Highest priority.\n"
-        "4 - High priority.\n"
-        "3 - Medium priority.\n"
-        "2 - Low priority.\n"
-        "1 - Lowest priority.\n",
-        "Tell me what type of event this is. Here is a list of event types I currently know:\nMeeting, Appointment, Reminder",
-        "What is the location of the event? (Type 'None' for no location)",
-        "Do you want to block travel time for this event? (Yes/No)",
-        "Enter the mode of transport (DRIVING, WALKING, BICYCLING, TRANSIT):",
-        "Enter source address:",
-        "Your travel event was successfully created!",
-        "Here is your Google Maps link for navigation: https://maps.google.com/?q=123+Main+St",
-        "Any additional description you want me to add about the event? If not, enter 'done'",
-        "Your event was successfully created!",
-        "Event link: https://calendar.google.com/calendar/event?eid=test_event_id",
-    ]
-
-    # Extract actual send calls
-    actual_send_calls = [call_args[0][0] for call_args in mock_ctx.send.call_args_list]
-
-    # Compare expected and actual messages
-    for expected, actual in zip(expected_messages, actual_send_calls):
-        assert expected == actual, f"Expected send message '{expected}', but got '{actual}'"
-
-    # Verify that the event was added to Google Calendar
-    mock_google_credentials.assert_called_once()
-    mock_google_build.assert_called_once_with('calendar', 'v3', credentials=mock_google_credentials.return_value)
-    mock_google_build.return_value.events().insert.assert_called_once()
-    mock_google_build.return_value.events().insert.return_value.execute.assert_called_once()
-
-    # Verify that create_event_type was called
-    mock_create_event_type.assert_awaited_once_with(mock_ctx, mock_client, "Meeting")
-
-    # Verify that get_distance was called
-    mock_get_distance.assert_called_once_with("Office", "123 Main St", "DRIVING")
-
-    # Verify that create_event_tree was called
-    mock_create_event_tree.assert_called_once_with(str(mock_ctx.author.id))
-
-    # Verify that turn_types_to_string was called
-    mock_turn_types_to_string.assert_called_once_with(str(mock_ctx.author.id))
-
-    # Verify that parse_period was called
-    mock_parse_period.assert_called_once_with("09/29/21 09:30 am 09/29/21 11:30 am")
-    mock_parse_period24.assert_not_called()
-
-    # Verify that add_event_to_file was called with correct parameters
-    expected_event = Event(
+    # Create a sample Event object without 'id'
+    test_event = Event(
         startDateTime="2021-09-29 09:30:00",
         endDateTime="2021-09-29 11:30:00",
         priority="5",
         type="Meeting",
-        desc="This is a test event.",
+        desc="Test description",
         location="Office"
     )
-    mock_add_event_to_file.assert_called_once_with(str(mock_ctx.author.id), expected_event, 'test_event_id')
+    
+    # Mock user ID
+    user_id = "test_user_id"
+    
+    # Mock the DataFrame to be empty initially
+    with patch('functionality.shared_functions.pd.read_csv') as mock_read_csv, \
+         patch('functionality.shared_functions.pd.concat') as mock_pd_concat:
+         
+        # Setup the mock for read_csv to return an empty DataFrame with specific columns
+        mock_read_csv.return_value = pd.DataFrame(columns=[
+            'ID', 'Name', 'Start Date', 'End Date', 'Priority', 'Type', 'Notes'
+        ])
+        
+        # Setup the mock for pd.concat to simulate appending the new row
+        mock_pd_concat.return_value = pd.DataFrame([{
+            'ID': '',
+            'Name': '',
+            'Start Date': '',
+            'End Date': '',
+            'Priority': '',
+            'Type': '',
+            'Notes': ''
+        }])
+        
+        # Call the function to add the event
+        add_event_to_file(user_id, test_event, 'test_event_id')
+        
+        # Assertions to ensure pandas functions were called correctly
+        mock_read_csv.assert_called_once_with(f'events_{user_id}.csv')
+        mock_pd_concat.assert_called_once()
 
-    # Verify that channel.send was called with the event link
-    mock_ctx.send.assert_any_call("Your event was successfully created!")
-    mock_ctx.send.assert_any_call('Event link: https://calendar.google.com/calendar/event?eid=test_event_id')
+# ----------------------------
+# Test for read_event_file
+# ----------------------------
+def test_read_event_file():
+    """
+    Test reading events from the event file to verify they are correctly written and read back.
+    """
+    user_id = "test_user_id"
+    with patch('functionality.shared_functions.pd.read_csv') as mock_read_csv:
+        # Create a mock DataFrame to be returned by read_csv
+        mock_df = pd.DataFrame([{
+            'ID': 'test123',
+            'Name': 'Test Event',
+            'Start Date': '2021-09-29 09:30:00',
+            'End Date': '2021-09-29 11:30:00',
+            'Priority': '5',
+            'Type': 'Meeting',
+            'Notes': 'Test description'
+        }])
+        mock_read_csv.return_value = mock_df
+        
+        # Call the function to read events
+        events = read_event_file(user_id)
+        
+        # Assertions
+        mock_read_csv.assert_called_once_with(f'events_{user_id}.csv')
+        assert len(events) == 1, "Expected one event in the event file."
+        event = events[0]
+        assert event['ID'] == 'test123', "Event ID does not match."
+        assert event['Name'] == 'Test Event', "Event Name does not match."
+        # Add other assertions as necessary
+
+# ----------------------------
+# Test for check_start_or_end
+# ----------------------------
+def test_check_start_or_end():
+    """
+    Test the check_start_or_end function with various scenarios.
+    """
+    # Import the function inside the test to avoid circular imports
+    from functionality.shared_functions import check_start_or_end  # Adjust import as necessary
+    
+    # Test case where today is the start date
+    result = check_start_or_end(['2022-10-08', '2024-08-08'], '2022-10-08')
+    assert result == 2, f"Expected 2, but got {result}"
+    
+    # Test case where today is the end date
+    result = check_start_or_end(['2022-06-06', '2025-05-12'], '2025-05-12')
+    assert result == 3, f"Expected 3, but got {result}"
+    
+    # Test case where today is neither
+    result = check_start_or_end(['2022-06-06', '2025-05-12'], '2023-01-01')
+    assert result == False, f"Expected False, but got {result}"
+
+# ----------------------------
+# Test for importing ICS data
+# ----------------------------
+def test_import_ics():
+    """
+    Test importing ICS data and verifying it is processed correctly.
+    """
+    from functionality.import_file import get_ics_data  # Adjust import as necessary
+    from icalendar import Calendar  # Ensure icalendar is installed
+    
+    ICS_STRING = """BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Test Calendar//EN
+BEGIN:VEVENT
+UID:test123
+DTSTAMP:20210929T093000Z
+DTSTART:20210929T093000Z
+DTEND:20210929T113000Z
+SUMMARY:Test Event
+DESCRIPTION:This is a test event.
+LOCATION:Office
+END:VEVENT
+END:VCALENDAR
+"""
+    gcal = Calendar.from_ical(ICS_STRING)
+    
+    # Call the function to process ICS data
+    data = get_ics_data(gcal)
+    
+    # Assertions
+    assert not data.empty, "DataFrame should not be empty after importing ICS data."
+    assert len(data) == 1, "DataFrame should contain exactly one event."
+    event = data.iloc[0]
+    assert event['ID'] == 'test123', "Event ID does not match."
+    assert event['Name'] == 'Test Event', "Event Name does not match."
+    assert event['Start Date'] == '2021-09-29 09:30:00', "Start Date does not match."
+    assert event['End Date'] == '2021-09-29 11:30:00', "End Date does not match."
+    assert event['Priority'] == '', "Priority should be empty."
+    assert event['Type'] == '', "Type should be empty."
+    assert event['Notes'] == 'This is a test event.', "Notes do not match."
+
+# ----------------------------
+# Additional Shared Function Tests
+# ----------------------------
+# Add more tests related to shared functions as necessary
