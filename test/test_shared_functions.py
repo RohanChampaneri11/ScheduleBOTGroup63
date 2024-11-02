@@ -1,4 +1,4 @@
-# test/test_add_event.py
+# tests/test_add_event.py
 
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -35,8 +35,8 @@ async def test_add_event_success(mock_ctx, mock_client, mock_google_credentials,
              datetime(2021, 9, 29, 11, 30)
          )) as mock_parse_period, \
          patch('functionality.AddEvent.parse_period24', return_value=(None, None)) as mock_parse_period24:
-             
-        await add_event(mock_ctx, mock_client)
+            
+            await add_event(mock_ctx, mock_client)
 
     # Assertions to ensure each step was called correctly
     mock_ctx.author.create_dm.assert_awaited_once()
@@ -70,8 +70,8 @@ async def test_add_event_success(mock_ctx, mock_client, mock_google_credentials,
 
     # Verify that send was called with expected messages
     actual_send_calls = [call_args[0][0] for call_args in mock_ctx.send.call_args_list]
-    for expected, actual in zip(expected_messages, actual_send_calls):
-        assert expected == actual, f"Expected send message '{expected}', but got '{actual}'"
+    for expected in expected_messages:
+        assert expected in actual_send_calls, f"Expected send message '{expected}', but got '{actual}'"
 
     # Verify that the event was added to Google Calendar
     mock_google_credentials.assert_called_once()
