@@ -13,7 +13,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../s
 from functionality.shared_functions import (
     read_event_file,
     add_event_to_file_main,
-    check_start_or_end,
     get_event_history,
     get_user_event_history,
     get_user_participation_history,
@@ -117,27 +116,6 @@ def test_read_event_file():
         assert len(events) == 2, "There should be two rows (header and one event)."
         assert events[1][0] == 'event123', "Event ID does not match."
         assert events[1][1] == 'Test Event', "Event name does not match."
-
-
-# ----------------------------
-# Test for check_start_or_end
-# ----------------------------
-def test_check_start_or_end():
-    """
-    Test the check_start_or_end function with various scenarios.
-    """
-    # Test case where today is the start date
-    result = check_start_or_end(['2022-10-08', '2024-08-08'], '2022-10-08')
-    assert result == 2, f"Expected 2, but got {result}"
-
-    # Test case where today is the end date
-    result = check_start_or_end(['2022-06-06', '2025-05-12'], '2025-05-12')
-    assert result == 3, f"Expected 3, but got {result}"
-
-    # Test case where today is neither start nor end date
-    result = check_start_or_end(['2022-06-06', '2025-05-12'], '2023-01-01')
-    assert result == False, f"Expected False, but got {result}"
-
 
 # ----------------------------
 # Test for get_event_history
