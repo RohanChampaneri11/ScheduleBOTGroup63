@@ -1,6 +1,5 @@
-# From https://stackoverflow.com/questions/25827160/importing-correctly-with-pytest
-# Change current working directory so test case can find the source files
-import sys, os
+import sys
+import os
 import asyncio
 import discord
 import discord.ext.commands as commands
@@ -13,15 +12,17 @@ sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
 import pytest
 from datetime import datetime
 
-from functionality.AddEvent import check_complete, add_event  # type: ignore
+from functionality.shared_functions import add_event_to_file
+from Event import Event
+from parse.match import parse_period, parse_period24
+from functionality.AddEvent import add_event, check_complete  # Ensure correct import path
 
-
+# Configure fixtures for client and bot
 @pytest.fixture
 def client(event_loop):
     c = discord.Client(loop=event_loop)
     test.configure(c)
     return c
-
 
 @pytest.fixture
 def bot(request, event_loop):
@@ -31,8 +32,11 @@ def bot(request, event_loop):
 
     @b.command()
     async def test_add(ctx):
-        thread = threading.Thread(target=add_event, args=(ctx, b), daemon=True)
+        # Start a separate thread to handle add_event asynchronously
+        thread = threading.Thread(target=asyncio.run, args=(add_event(ctx, b),), daemon=True)
         thread.start()
+
+    # Load bot extensions
     marks = request.function.pytestmark
     mark = None
     for mark in marks:
@@ -46,13 +50,13 @@ def bot(request, event_loop):
     test.configure(b)
     return b
 
-
+# Asynchronous test for add_event command
 @pytest.mark.asyncio
 async def test_add_event(bot):
     await test.message("!test_add")
-    await asyncio.sleep(.25)
+    await asyncio.sleep(0.25)
 
-
+# Helper functions to create variable sets for test cases
 def check_variables1():
     output = {
         "start": False,
@@ -60,10 +64,9 @@ def check_variables1():
         "end": False,
         "end_date": datetime(2021, 9, 29, 23, 30),
         "array": [],
-        #"location": "",
+        "location": "",
     }
     return output
-
 
 def check_variables2():
     output = {
@@ -72,10 +75,9 @@ def check_variables2():
         "end": False,
         "end_date": datetime(2021, 9, 29, 23, 30),
         "array": [],
-        #"location": "None",
+        "location": "None",
     }
     return output
-
 
 def check_variables3():
     output = {
@@ -84,10 +86,9 @@ def check_variables3():
         "end": True,
         "end_date": datetime(2021, 9, 29, 23, 30),
         "array": [],
-        #"location": "None",
+        "location": "None",
     }
     return output
-
 
 def check_variables4():
     output = {
@@ -96,16 +97,17 @@ def check_variables4():
         "end": True,
         "end_date": datetime(2021, 9, 29, 23, 30),
         "array": ["Hello"],
-        #"location": "None",
+        "location": "None",
     }
     return output
 
-
+# Test check_complete with different variable sets
 def test_check():
     example1 = check_variables1()
     example2 = check_variables2()
     example3 = check_variables3()
     example4 = check_variables4()
+
     assert not (
         check_complete(
             example1["start"],
@@ -113,7 +115,7 @@ def test_check():
             example1["end"],
             example1["end_date"],
             example1["array"],
-            #example1["location"],
+            example1["location"],
         )
     )
     assert not (
@@ -123,7 +125,7 @@ def test_check():
             example2["end"],
             example2["end_date"],
             example2["array"],
-            #example1["location"],
+            example2["location"],
         )
     )
     assert check_complete(
@@ -132,7 +134,7 @@ def test_check():
         example3["end"],
         example3["end_date"],
         example3["array"],
-        #example1["location"],
+        example3["location"],
     )
     assert check_complete(
         example4["start"],
@@ -140,5 +142,5 @@ def test_check():
         example4["end"],
         example4["end_date"],
         example4["array"],
-        #example1["location"],
+        example4["location"],
     )
