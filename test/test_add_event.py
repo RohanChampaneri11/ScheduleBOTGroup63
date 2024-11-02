@@ -20,8 +20,8 @@ from functionality.AddEvent import add_event
 # Configure fixtures for client and bot
 @pytest.fixture
 def client(event_loop):
-    c = discord.Client(loop=event_loop)
-    test.configure(c)
+    intents = discord.Intents.default()  # or customize the intents you need
+    c = discord.Client(loop=event_loop, intents=intents)
     return c
 
 @pytest.fixture
