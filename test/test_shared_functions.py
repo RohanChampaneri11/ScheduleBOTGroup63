@@ -30,6 +30,9 @@ from functionality.shared_functions import (
     write_event_file,
     encrypt_file,
     decrypt_file,
+    format_event_history,
+    check_passkey,
+    load_key,
     create_key_directory,
     check_key,
     write_key
