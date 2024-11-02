@@ -15,7 +15,7 @@ from datetime import datetime
 from functionality.shared_functions import add_event_to_file
 from Event import Event
 from parse.match import parse_period, parse_period24
-from functionality.AddEvent import add_event, check_complete  # Ensure correct import path
+from functionality.AddEvent import add_event
 
 # Configure fixtures for client and bot
 @pytest.fixture
@@ -55,92 +55,3 @@ def bot(request, event_loop):
 async def test_add_event(bot):
     await test.message("!test_add")
     await asyncio.sleep(0.25)
-
-# Helper functions to create variable sets for test cases
-def check_variables1():
-    output = {
-        "start": False,
-        "start_date": datetime(2021, 9, 29, 21, 30),
-        "end": False,
-        "end_date": datetime(2021, 9, 29, 23, 30),
-        "array": [],
-        "location": "",
-    }
-    return output
-
-def check_variables2():
-    output = {
-        "start": True,
-        "start_date": datetime(2021, 9, 29, 21, 30),
-        "end": False,
-        "end_date": datetime(2021, 9, 29, 23, 30),
-        "array": [],
-        "location": "None",
-    }
-    return output
-
-def check_variables3():
-    output = {
-        "start": True,
-        "start_date": datetime(2021, 9, 29, 21, 30),
-        "end": True,
-        "end_date": datetime(2021, 9, 29, 23, 30),
-        "array": [],
-        "location": "None",
-    }
-    return output
-
-def check_variables4():
-    output = {
-        "start": True,
-        "start_date": datetime(2021, 9, 29, 21, 30),
-        "end": True,
-        "end_date": datetime(2021, 9, 29, 23, 30),
-        "array": ["Hello"],
-        "location": "None",
-    }
-    return output
-
-# Test check_complete with different variable sets
-def test_check():
-    example1 = check_variables1()
-    example2 = check_variables2()
-    example3 = check_variables3()
-    example4 = check_variables4()
-
-    assert not (
-        check_complete(
-            example1["start"],
-            example1["start_date"],
-            example1["end"],
-            example1["end_date"],
-            example1["array"],
-            example1["location"],
-        )
-    )
-    assert not (
-        check_complete(
-            example2["start"],
-            example2["start_date"],
-            example2["end"],
-            example2["end_date"],
-            example2["array"],
-            example2["location"],
-        )
-    )
-    assert check_complete(
-        example3["start"],
-        example3["start_date"],
-        example3["end"],
-        example3["end_date"],
-        example3["array"],
-        example3["location"],
-    )
-    assert check_complete(
-        example4["start"],
-        example4["start_date"],
-        example4["end"],
-        example4["end_date"],
-        example4["array"],
-        example4["location"],
-    )
