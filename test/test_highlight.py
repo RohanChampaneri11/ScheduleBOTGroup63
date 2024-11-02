@@ -20,8 +20,8 @@ NUM_ITER = 1000
 
 @pytest.fixture
 def client(event_loop):
-    c = discord.Client(loop=event_loop)
-    test.configure(c)
+    intents = discord.Intents.default()  # or customize the intents you need
+    c = discord.Client(loop=event_loop, intents=intents)
     return c
 
 
