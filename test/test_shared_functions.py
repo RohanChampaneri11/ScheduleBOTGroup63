@@ -7,7 +7,7 @@ from src.functionality.shared_functions import (
     read_event_file,
     create_event_file,
 )
-from src.functionality.Event import Event  # Ensure Event is correctly imported
+from src import Event  # Ensure Event is correctly imported
 
 # Test user ID to simulate user-specific event data
 test_user_id = "TestUser"
