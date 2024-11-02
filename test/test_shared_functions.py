@@ -43,17 +43,18 @@ def test_add_event_to_file():
     """
     # Create a sample Event object
     test_event = Event(
-        id="test123",
+        event_id="test123",
+        name="Sample Event",
         startDateTime=datetime(2021, 9, 29, 20, 30).strftime("%Y-%m-%d %H:%M:%S"),
         endDateTime=datetime(2021, 9, 29, 20, 45).strftime("%Y-%m-%d %H:%M:%S"),
         priority="Low",
-        type="TestEvent",
-        desc="Test description",
+        event_type="TestEvent",
+        description="Test description",
         location="Test Location"
     )
 
     # Add the event to the file
-    add_event_to_file(test_user_id, test_event, test_event.id)
+    add_event_to_file(test_user_id, test_event, test_event.event_id)
 
     # Read the events to check if the event was added
     events = read_event_file(test_user_id)
@@ -72,7 +73,7 @@ def test_read_event_file():
     # Verify details of the added event
     event = next((e for e in events if e[0] == "test123"), None)
     assert event is not None, "Specific event not found in the file."
-    assert event[1] == "test123", "Event ID mismatch."
+    assert event[1] == "Sample Event", "Event name mismatch."
     assert event[4] == "Low", "Event priority mismatch."
 
 def test_create_event_file():
