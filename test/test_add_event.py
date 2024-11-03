@@ -16,7 +16,7 @@ from parse.match import parse_period, parse_period24
 from functionality.AddEvent import add_event
 
 @pytest.fixture
-async def bot():
+def bot():
     intents = discord.Intents.default()
     intents.members = True
     bot = commands.Bot(command_prefix="!", intents=intents)
@@ -25,8 +25,16 @@ async def bot():
     async def test_add(ctx):
         await add_event(ctx, bot)
 
-    # Configure the test runner with the bot instance within the asynchronous context
+    print("Configuring dpytest with the bot instance.")
     dpytest.configure(bot)
+    print("dpytest configured successfully.")
+
+    # Temporarily remove extension loading to prevent errors
+    # Uncomment and adjust the following lines if you need to load extensions
+    # try:
+    #     bot.load_extension("cogs.your_extension_name")  # Replace with your actual cog path
+    # except Exception as e:
+    #     print(f"Failed to load extension: {e}")
 
     return bot
 
