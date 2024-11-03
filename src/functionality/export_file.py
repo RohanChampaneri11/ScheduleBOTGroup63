@@ -1,9 +1,12 @@
 import os
 import csv
 import discord
-from functionality.shared_functions import create_event_file, create_event_directory
 
-from functionality.shared_functions import load_key, decrypt_file, encrypt_file
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.functionality.shared_functions import create_event_file, create_event_directory
+
+from src.functionality.shared_functions import load_key, decrypt_file, encrypt_file
 
 
 async def export_file(ctx):

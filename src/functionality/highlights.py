@@ -1,10 +1,13 @@
 import re
 import datetime
 from datetime import date
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
 
-from functionality.shared_functions import read_event_file, create_event_tree
-from functionality.weather import getWeatherData
-from functionality.distance import get_lat_log, get_key
+from src.functionality.shared_functions import read_event_file, create_event_tree
+from src.functionality.weather import getWeatherData
+from src.functionality.distance import get_lat_log, get_key
 
 
 async def get_highlight(ctx, arg):

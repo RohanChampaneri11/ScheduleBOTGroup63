@@ -1,17 +1,21 @@
 # functionality/shared_functions.py
 
+import sys
 import os
 import csv
 from pathlib import Path
-from Event import Event
 from datetime import datetime
 from cryptography.fernet import Fernet
 import asyncio
 from datetime import datetime
 from dateutil import parser
-from functionality.Google import connect_google
 from datetime import datetime
 import logging
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.Event import Event
+from src.functionality.Google import connect_google
+
 
 logger = logging.getLogger(__name__)
 

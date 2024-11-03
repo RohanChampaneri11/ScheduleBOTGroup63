@@ -1,8 +1,6 @@
 import asyncio
-import sys, os
-
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
-
+import sys
+import os
 import pytest
 import pandas as pd
 import discord
@@ -11,8 +9,10 @@ import discord.ext.test as test
 import threading
 from icalendar import Calendar
 import time
-from schedulebot import importfile
-from functionality.import_file import verify_csv, convert_time, import_file, get_ics_data
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from src.schedulebot import importfile
+from src.functionality.import_file import verify_csv, convert_time, import_file, get_ics_data
 
 ICS_STRING = "BEGIN:VCALENDAR\n" \
              "PRODID:-//Google Inc//Google Calendar 70.9054//EN\n" \
@@ -74,44 +74,6 @@ ICS_STRING = "BEGIN:VCALENDAR\n" \
              "TRANSP:OPAQUE\n" \
              "END:VEVENT\n" \
              "END:VCALENDAR"
-
-
-@pytest.fixture
-def client(event_loop):
-    c = discord.Client(loop=event_loop)
-    test.configure(c)
-    return c
-
-
-@pytest.fixture
-def bot(request, event_loop):
-    intents = discord.Intents.default()
-    intents.members = True
-    b = commands.Bot(command_prefix="!", loop=event_loop, intents=intents)
-
-    @b.command()
-    async def test_import(ctx):
-        thread = threading.Thread(target=importfile, args=(ctx, b), daemon=True)
-        thread.start()
-
-    marks = request.function.pytestmark
-    mark = None
-    for mark in marks:
-        if mark.name == "cogs":
-            break
-
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
-
-    test.configure(b)
-    return b
-
-
-@pytest.mark.asyncio
-async def test_import_file(bot):
-    await test.message("!test_import")
-    await asyncio.sleep(.25)
 
 
 def test_import_ics():

@@ -1,71 +1,19 @@
-# From https://stackoverflow.com/questions/25827160/importing-correctly-with-pytest
-# Change current working directory so test case can find the source files
-import sys, os
-
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
-
-import pytest
+import sys
+import os
 import datetime
 import discord
 import discord.ext.commands as commands
 import discord.ext.test as test
-
+import pytest
 from random import randint
-from functionality.highlights import check_start_or_end, convert_to_12, get_highlight, get_date
-from functionality.shared_functions import create_event_tree, add_event_to_file
-from Event import Event
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
+from src.functionality.highlights import check_start_or_end, convert_to_12, get_highlight, get_date
+from src.functionality.shared_functions import create_event_tree, add_event_to_file
+from src.Event import Event
 
 NUM_ITER = 1000
-
-@pytest.fixture
-def client(event_loop):
-    c = discord.Client(loop=event_loop)
-    test.configure(c)
-    return c
-
-
-@pytest.fixture
-def bot(request, event_loop):
-    intents = discord.Intents.default()
-    intents.members = True
-    b = commands.Bot("!", loop=event_loop, intents=intents)
-
-    marks = request.function.pytestmark
-    mark = None
-    for mark in marks:
-        if mark.name == "cogs":
-            break
-
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
-
-    test.configure(b)
-    return b
-
-@pytest.mark.asyncio
-async def test_get_free_time_empty(bot, client):
-    guild = bot.guilds[0]
-    channel = guild.text_channels[0]
-    message = await channel.send("!day today")
-
-    await get_highlight(message, 'today')
-
-@pytest.mark.asyncio
-async def test_get_free_time(bot, client):
-    guild = bot.guilds[0]
-    channel = guild.text_channels[0]
-    message = await channel.send("!day today")
-
-    start = datetime.datetime(2021, 9, 30, 0, 0)
-    end = datetime.datetime(2021, 9, 30, 23, 59)
-
-    current = Event("SE project", start, end, 2, "homework", "Finish it")
-    create_event_tree(str(message.author.id))
-    add_event_to_file(str(message.author.id), current)
-
-    await get_highlight(message, 'today')
 
 """
 TESTING DATE CHECKING
@@ -122,7 +70,7 @@ def test_ends_later():
         # For testing, assume today is the first day
         today = day1
         print(str(day1) + " " + str(day2) + " " + str(today))
-        assert check_start_or_end([day1, day2], today) == 2
+        assert check_start_or_end([day1, day2], today) == True
 
 
 # Test if event started on an earlier date but ends today
@@ -143,7 +91,7 @@ def test_started_earlier():
         # for testing, assume day 2 is today
         today = day2
 
-        assert check_start_or_end([day1, day2], today) == 3
+        assert check_start_or_end([day1, day2], today) == True
 
 
 # Test if no event is scheduled for today

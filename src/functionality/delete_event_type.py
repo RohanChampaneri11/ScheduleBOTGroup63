@@ -1,9 +1,12 @@
 import os
 import re
+import sys
 import csv
 from pathlib import Path
 from types import TracebackType
-from functionality.export_file import load_key, encrypt_file, decrypt_file
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.functionality.export_file import load_key, encrypt_file, decrypt_file
 
 def delete_type(rows, msg_content):
     """

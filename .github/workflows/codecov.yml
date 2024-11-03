@@ -5,10 +5,10 @@ name: Code Coverage
 on:
   push:
     branches:
-      - fall_2024
+      - '*'
   pull_request:
     branches:
-      - fall_2024
+      - '*'
 
 jobs:
   build:
@@ -29,9 +29,11 @@ jobs:
           pip install pytest
           pip install pytest-cov
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=${PYTHONPATH}:$(pwd)/src" >> $GITHUB_ENV
+
       - name: Run tests and generate coverage report
         run: |
-          export PYTHONPATH=src
           pytest --cov=./ --cov-report=xml
 
       - name: Upload coverage reports to Codecov

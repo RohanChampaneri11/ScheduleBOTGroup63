@@ -1,7 +1,14 @@
 # functionality/Delete_event.py
 
+import sys
 import discord
 import asyncio
+from googleapiclient.errors import HttpError
+import os
+import logging
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+
 from functionality.highlights import convert_to_12
 from functionality.shared_functions import (
     read_event_file,
@@ -9,9 +16,6 @@ from functionality.shared_functions import (
     delete_event_from_file
 )
 from functionality.Google import connect_google  # Ensure correct import path
-from googleapiclient.errors import HttpError
-import os
-import logging
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)

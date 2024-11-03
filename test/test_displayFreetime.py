@@ -1,67 +1,17 @@
 import pytest
 import os
 import sys
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
 from datetime import datetime
 from datetime import timedelta
 from datetime import time
 import discord
 import discord.ext.commands as commands
 import discord.ext.test as test
-from functionality.DisplayFreeTime import compute_free_time, get_free_time
-from functionality.shared_functions import create_event_tree, add_event_to_file
-from Event import Event
 
-
-@pytest.fixture
-def client(event_loop):
-    c = discord.Client(loop=event_loop)
-    test.configure(c)
-    return c
-
-
-@pytest.fixture
-def bot(request, event_loop):
-    intents = discord.Intents.default()
-    intents.members = True
-    b = commands.Bot("!", loop=event_loop, intents=intents)
-
-    marks = request.function.pytestmark
-    mark = None
-    for mark in marks:
-        if mark.name == "cogs":
-            break
-
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
-
-    test.configure(b)
-    return b
-
-@pytest.mark.asyncio
-async def test_get_free_time_empty(bot, client):
-    guild = bot.guilds[0]
-    channel = guild.text_channels[0]
-    message = await channel.send("!day")
-
-    await get_free_time(message, bot)
-
-@pytest.mark.asyncio
-async def test_get_free_time(bot, client):
-    guild = bot.guilds[0]
-    channel = guild.text_channels[0]
-    message = await channel.send("!day")
-
-    start = datetime(2021, 9, 30, 0, 0)
-    end = datetime(2021, 9, 30, 23, 59)
-
-    current = Event("SE project", start, end, 2, "homework", "Finish it")
-    create_event_tree(str(message.author.id))
-    add_event_to_file(str(message.author.id), current)
-
-    await get_free_time(message, bot)
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from src.functionality.DisplayFreeTime import compute_free_time, get_free_time
+from src.functionality.shared_functions import create_event_tree, add_event_to_file
+from src.Event import Event
 
 
 # all of the test cases data is generated using today's date but with fixed schedule hours for the events

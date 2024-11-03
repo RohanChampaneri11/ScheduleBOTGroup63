@@ -3,12 +3,15 @@
 import discord
 import asyncio
 from datetime import datetime
-from functionality.shared_functions import (
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.functionality.shared_functions import (
     read_event_file,
     create_event_tree,
     write_event_file
 )
-from functionality.Google import connect_google
+from src.functionality.Google import connect_google
 from googleapiclient.errors import HttpError
 import logging
 
