@@ -31,17 +31,7 @@ def bot(request, event_loop):
 
     @b.command()
     async def test_add(ctx):
-        thread = threading.Thread(target=add_event, args=(ctx, b), daemon=True)
-        thread.start()
-    marks = request.function.pytestmark
-    mark = None
-    for mark in marks:
-        if mark.name == "cogs":
-            break
-
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
+        await add_event(ctx, b)  # Call add_event directly without threading
 
     test.configure(b)
     return b
@@ -50,7 +40,7 @@ def bot(request, event_loop):
 @pytest.mark.asyncio
 async def test_add_event(bot):
     await test.message("!test_add")
-    await asyncio.sleep(.25)
+    await asyncio.sleep(1)
 
 
 def check_variables1():
