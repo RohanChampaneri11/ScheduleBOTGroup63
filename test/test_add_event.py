@@ -62,6 +62,7 @@ def check_variables4():
     }
 
 def test_check():
+    print ("Start checking")
     assert not check_complete(**check_variables1())
     assert not check_complete(**check_variables2())
     assert check_complete(**check_variables3())
