@@ -27,6 +27,7 @@ async def bot(event_loop):
 
 @pytest.mark.asyncio
 async def test_add_event(bot):
+    dpytest.configure(bot)  # Add this line to configure the test framework
     await dpytest.message("!test_add")
     await asyncio.sleep(0.25)
 
