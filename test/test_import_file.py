@@ -1,8 +1,6 @@
 import asyncio
-import sys, os
-
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
-
+import sys
+import os
 import pytest
 import pandas as pd
 import discord
@@ -11,8 +9,10 @@ import discord.ext.test as test
 import threading
 from icalendar import Calendar
 import time
-from schedulebot import importfile
-from functionality.import_file import verify_csv, convert_time, import_file, get_ics_data
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from src.schedulebot import importfile
+from src.functionality.import_file import verify_csv, convert_time, import_file, get_ics_data
 
 ICS_STRING = "BEGIN:VCALENDAR\n" \
              "PRODID:-//Google Inc//Google Calendar 70.9054//EN\n" \

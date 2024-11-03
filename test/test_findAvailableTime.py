@@ -5,11 +5,11 @@ TESTING Find available time based on the preferred time and events
 from datetime import datetime
 import sys
 import os
-from Event import Event
 from datetime import datetime
-from functionality.FindAvailableTime import findInter, findIntersection
 
-sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/../src"))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "./")))
+from src.functionality.FindAvailableTime import findInter, findIntersection
+from src.Event import Event
 
 def test_find_one():
     elist = []

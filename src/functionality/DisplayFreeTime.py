@@ -1,10 +1,13 @@
 from datetime import datetime
-from Event import Event
 import os
 import csv
 from datetime import timedelta
 from datetime import time
-from functionality.export_file import load_key, encrypt_file, decrypt_file
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.Event import Event
+from src.functionality.export_file import load_key, encrypt_file, decrypt_file
 
 
 async def get_free_time(ctx, bot):

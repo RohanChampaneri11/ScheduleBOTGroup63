@@ -6,9 +6,12 @@ import discord.ext.commands as commands
 import discord.ext.test as dpytest
 import pytest
 from datetime import datetime
-from functionality.AddEvent import check_complete, add_event  # type: ignore
 
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
+# Add project root to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
+from src.functionality.AddEvent import check_complete, add_event
+
 
 
 @pytest.fixture

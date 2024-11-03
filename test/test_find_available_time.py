@@ -1,16 +1,18 @@
 import pytest
 import os
 import sys
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
 from datetime import datetime
 from datetime import timedelta
 from datetime import time
 import discord
 import discord.ext.commands as commands
 import discord.ext.test as test
-from functionality.FindAvailableTime import getEventsOnDate
-from functionality.shared_functions import create_event_tree, add_event_to_file
-from Event import Event
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
+from src.functionality.FindAvailableTime import getEventsOnDate
+from src.functionality.shared_functions import create_event_tree, add_event_to_file
+from src.Event import Event
 
 @pytest.fixture
 def client(event_loop):

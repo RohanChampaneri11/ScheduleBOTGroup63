@@ -6,12 +6,12 @@ import discord.ext.test as test
 import threading
 import time
 
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 
 import pytest
 from datetime import datetime
 
-from functionality.export_file import export_file  # type: ignore
+from src.functionality.export_file import export_file  # type: ignore
 
 
 @pytest.fixture

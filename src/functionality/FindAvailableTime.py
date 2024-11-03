@@ -3,9 +3,11 @@ import os
 import csv
 import re
 
-from Event import Event
-from functionality.create_event_type import create_event_type
-from functionality.export_file import load_key, encrypt_file, decrypt_file
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.Event import Event
+from src.functionality.create_event_type import create_event_type
+from src.functionality.export_file import load_key, encrypt_file, decrypt_file
 
 
 async def find_avaialbleTime(ctx, client):

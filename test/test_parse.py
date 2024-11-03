@@ -1,14 +1,14 @@
 # From https://stackoverflow.com/questions/25827160/importing-correctly-with-pytest
 # Change current working directory so test case can find the source files
 import sys, os
-sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/../src"))
 import datetime
 import string
-
 import pytest
 from random import randint, choices
 
-from parse.match import parse_period
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
+from src.parse.match import parse_period
 
 NUM_ITER = 1000
 

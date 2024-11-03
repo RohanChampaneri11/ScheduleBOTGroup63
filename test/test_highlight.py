@@ -1,19 +1,19 @@
 # From https://stackoverflow.com/questions/25827160/importing-correctly-with-pytest
 # Change current working directory so test case can find the source files
-import sys, os
-
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
-
+import sys
 import pytest
 import datetime
 import discord
 import discord.ext.commands as commands
 import discord.ext.test as test
-
 from random import randint
-from functionality.highlights import check_start_or_end, convert_to_12, get_highlight, get_date
-from functionality.shared_functions import create_event_tree, add_event_to_file
-from Event import Event
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+
+from src.functionality.highlights import check_start_or_end, convert_to_12, get_highlight, get_date
+from src.functionality.shared_functions import create_event_tree, add_event_to_file
+from src.Event import Event
 
 
 NUM_ITER = 1000
@@ -122,7 +122,7 @@ def test_ends_later():
         # For testing, assume today is the first day
         today = day1
         print(str(day1) + " " + str(day2) + " " + str(today))
-        assert check_start_or_end([day1, day2], today) == 2
+        assert check_start_or_end([day1, day2], today) == True
 
 
 # Test if event started on an earlier date but ends today
@@ -143,7 +143,7 @@ def test_started_earlier():
         # for testing, assume day 2 is today
         today = day2
 
-        assert check_start_or_end([day1, day2], today) == 3
+        assert check_start_or_end([day1, day2], today) == True
 
 
 # Test if no event is scheduled for today

@@ -1,6 +1,10 @@
 # functionality/event_history.py
 
-from .shared_functions import read_event_file
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+
+from src.functionality.shared_functions import read_event_file
 from datetime import datetime
 
 def format_event_history(events):

@@ -1,6 +1,7 @@
 import discord  # type: ignore
 from discord.ext import commands  # type: ignore
 import os
+import sys
 import shutil
 import aiohttp
 import json
@@ -10,6 +11,7 @@ import logging
 from discord.ui import Button, View
 import requests
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "./")))
 from functionality.recommend_event import recommend_event
 from functionality.AddEvent import add_event  # type: ignore
 from functionality.highlights import get_highlight

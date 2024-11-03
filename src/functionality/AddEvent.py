@@ -1,15 +1,19 @@
 import os
+import sys
 import traceback
 import logging
-from functionality.shared_functions import create_event_tree, create_type_tree, add_event_to_file, turn_types_to_string
-from Event import Event
-from parse.match import parse_period, parse_period24
-from functionality.create_event_type import create_event_type
-from functionality.distance import get_distance
 from datetime import datetime, timedelta
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 import asyncio
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.parse.match import parse_period, parse_period24
+from src.functionality.shared_functions import create_event_tree, create_type_tree, add_event_to_file, turn_types_to_string
+from src.functionality.create_event_type import create_event_type
+from src.functionality.distance import get_distance
+from src.Event import Event
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

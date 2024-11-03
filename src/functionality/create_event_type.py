@@ -1,11 +1,14 @@
 import re
+import sys
 import os
 import csv
 from datetime import datetime
 from types import TracebackType
-from event_type import event_type
-from functionality.shared_functions import create_type_directory, create_type_file
-from functionality.shared_functions import load_key, decrypt_file, encrypt_file
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.event_type import event_type
+from src.functionality.shared_functions import create_type_directory, create_type_file
+from src.functionality.shared_functions import load_key, decrypt_file, encrypt_file
 
 
 async def create_event_type(ctx, client, event_msg):
@@ -54,7 +57,7 @@ async def create_event_type(ctx, client, event_msg):
             # Strips message to just the text the user entered
             msg_content = event_msg.content
             # Splits response to prepare data to be appended to event_array
-            time_array = re.split("\s", msg_content)
+            time_array = re.split(r"\s", msg_content)
 
         try:
             start_time = datetime.strptime(

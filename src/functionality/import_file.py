@@ -4,9 +4,12 @@ import discord
 import pandas as pd
 import tempfile
 from discord import Attachment
-from functionality.shared_functions import create_event_tree, create_type_tree, add_event_to_file, turn_types_to_string
-from Event import Event
-from parse.match import parse_period
+
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".../")))
+from src.functionality.shared_functions import create_event_tree, create_type_tree, add_event_to_file, turn_types_to_string
+from src.Event import Event
+from src.parse.match import parse_period
 from icalendar import Calendar
 
 import fnmatch
@@ -101,13 +104,20 @@ def get_ics_data(calendar):
     for component in calendar.walk():
         if component.name == "VEVENT":
             print("Adding Event....")
-            data = data.append({'ID': '',
-                         'Name': component.get('summary'),
-                         'Start Date': str(component.get('dtstart').dt),
-                         'End Date': str(component.get('dtend').dt),
-                         'Priority': '3',
-                         'Type': '',
-                         'Notes': component.get('description')}, ignore_index=True)
+            # Create a new DataFrame for the row to be added
+            new_row = pd.DataFrame([{
+                'ID': '',
+                'Name': component.get('summary'),
+                'Start Date': str(component.get('dtstart').dt),
+                'End Date': str(component.get('dtend').dt),
+                'Priority': '3',
+                'Type': '',
+                'Notes': component.get('description')
+            }])
+
+            # Concatenate the new row with the existing data DataFrame
+            data = pd.concat([data, new_row], ignore_index=True)
+
 
     return data
 

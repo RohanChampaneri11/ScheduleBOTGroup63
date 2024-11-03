@@ -2,12 +2,12 @@
 # Change current working directory so test case can find the source files
 
 import sys, os
-sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/../src"))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 import datetime
 import string
 from random import randint, choices
 import pytest
-from event_type import event_type
+from src.event_type import event_type
 
 # Generate one random datetime object between an uniform range
 def random_datetime(start = 2020, end = 2025):

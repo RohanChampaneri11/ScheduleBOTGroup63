@@ -2,9 +2,9 @@
 # Change current working directory so test case can find the source files
 import sys
 import os
-from Event import Event
 from datetime import datetime
-sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/../src"))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+from src.Event import Event
 
 
 def create_event_1():
