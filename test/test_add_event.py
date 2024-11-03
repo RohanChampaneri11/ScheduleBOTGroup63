@@ -3,7 +3,7 @@ import os
 import asyncio
 import discord
 import discord.ext.commands as commands
-import dpytest
+import discord.ext.test as dpytest
 import pytest
 from datetime import datetime
 from functionality.AddEvent import check_complete, add_event  # type: ignore
