@@ -76,44 +76,6 @@ ICS_STRING = "BEGIN:VCALENDAR\n" \
              "END:VCALENDAR"
 
 
-@pytest.fixture
-def client(event_loop):
-    intents = discord.Intents.default()  # or customize the intents you need
-    c = discord.Client(loop=event_loop, intents=intents)
-    return c
-
-
-@pytest.fixture
-def bot(request, event_loop):
-    intents = discord.Intents.default()
-    intents.members = True
-    b = commands.Bot(command_prefix="!", loop=event_loop, intents=intents)
-
-    @b.command()
-    async def test_import(ctx):
-        thread = threading.Thread(target=importfile, args=(ctx, b), daemon=True)
-        thread.start()
-
-    marks = request.function.pytestmark
-    mark = None
-    for mark in marks:
-        if mark.name == "cogs":
-            break
-
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
-
-    test.configure(b)
-    return b
-
-
-@pytest.mark.asyncio
-async def test_import_file(bot):
-    await test.message("!test_import")
-    await asyncio.sleep(.25)
-
-
 def test_import_ics():
     gcal = Calendar.from_ical(ICS_STRING)
 
