@@ -40,6 +40,10 @@ ScheduleBot is a Python application that helps you calendarize events and work t
 
 With ScheduleBot you can quickly schedule events, state your prefered times for certain types of activities (exercise, homework, meetings, etc.) and quickly find out which times you have available to do more stuff.
 
+## Why should you work on this?
+
+[![Pitch Video](https://img.youtube.com/vi/ekeR4NJLzoY/0.jpg)](https://www.youtube.com/watch?v=ekeR4NJLzoY)
+
 
 :rocket: Getting started
 ---
