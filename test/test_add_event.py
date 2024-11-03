@@ -16,16 +16,22 @@ from functionality.AddEvent import add_event
 
 # Configure fixtures for client and bot
 @pytest.fixture
-def client(event_loop):
+def client():
     intents = discord.Intents.default()  # or customize the intents you need
     c = discord.Client(intents=intents)
     return c
 
 @pytest.fixture
-def bot(request, event_loop):
+async def bot(request):
     intents = discord.Intents.default()
     intents.members = True
     b = commands.Bot(command_prefix="!", intents=intents)
+
+    # Define the setup hook to initialize the bot
+    async def setup_hook():
+        await b.add_cog(TestCog(b))
+
+    b.setup_hook = setup_hook
 
     @b.command()
     async def test_add(ctx):
@@ -33,25 +39,18 @@ def bot(request, event_loop):
 
     # Load bot extensions if specified
     marks = request.function.pytestmark
-    mark = None
     for mark in marks:
         if mark.name == "cogs":
-            break
+            for extension in mark.args:
+                await b.load_extension("tests.internal." + extension)
 
-    if mark is not None:
-        for extension in mark.args:
-            b.load_extension("tests.internal." + extension)
-
+    await b.login("fake-token")  # Use a dummy token for testing
+    await b.connect()
     test.configure(b)
     return b
 
 # Asynchronous test for add_event command
 @pytest.mark.asyncio
 async def test_add_event(bot):
-    # Send a message as a simulated command
     ctx = await test.message("!test_add")
-    # Wait for the event loop to process
     await asyncio.sleep(0.25)
-
-    # Verify that add_event was called successfully
-    # Add assertions here as needed
