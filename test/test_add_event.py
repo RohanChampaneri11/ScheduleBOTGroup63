@@ -4,13 +4,10 @@ import asyncio
 import discord
 import discord.ext.commands as commands
 import discord.ext.test as test
-import threading
-import time
-
-sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
-
 import pytest
 from datetime import datetime
+
+sys.path.append(os.path.realpath(os.path.dirname(__file__) + "/../src"))
 
 from functionality.shared_functions import add_event_to_file
 from Event import Event
@@ -21,22 +18,20 @@ from functionality.AddEvent import add_event
 @pytest.fixture
 def client(event_loop):
     intents = discord.Intents.default()  # or customize the intents you need
-    c = discord.Client(loop=event_loop, intents=intents)
+    c = discord.Client(intents=intents)
     return c
 
 @pytest.fixture
 def bot(request, event_loop):
     intents = discord.Intents.default()
     intents.members = True
-    b = commands.Bot(command_prefix="!", loop=event_loop, intents=intents)
+    b = commands.Bot(command_prefix="!", intents=intents)
 
     @b.command()
     async def test_add(ctx):
-        # Start a separate thread to handle add_event asynchronously
-        thread = threading.Thread(target=asyncio.run, args=(add_event(ctx, b),), daemon=True)
-        thread.start()
+        await add_event(ctx, b)
 
-    # Load bot extensions
+    # Load bot extensions if specified
     marks = request.function.pytestmark
     mark = None
     for mark in marks:
@@ -53,5 +48,10 @@ def bot(request, event_loop):
 # Asynchronous test for add_event command
 @pytest.mark.asyncio
 async def test_add_event(bot):
-    await test.message("!test_add")
+    # Send a message as a simulated command
+    ctx = await test.message("!test_add")
+    # Wait for the event loop to process
     await asyncio.sleep(0.25)
+
+    # Verify that add_event was called successfully
+    # Add assertions here as needed
