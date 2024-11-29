@@ -19,6 +19,7 @@
 [![Platform](https://img.shields.io/badge/platform-discord-blue)](https://discord.com/)
 [![codecov](https://codecov.io/github/RohanChampaneri11/ScheduleBOTGroup63/graph/badge.svg?token=2SCESFDOTE)](https://codecov.io/github/RohanChampaneri11/ScheduleBOTGroup63)
 <!--- [![codecov](https://codecov.io/gh/SEProjGrp5/ScheduleBot/branch/main/graph/badge.svg?token=Z53J2ZN227)](https://codecov.io/gh/SEProjGrp5/ScheduleBot) --->
+*********************************************
 
 
 <!--- [![Pylint](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml/badge.svg)](https://github.com/A1231/SEProjGrp6-ScheduleBot/actions/workflows/pylint.yml) --->
